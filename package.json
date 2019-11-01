@@ -6,7 +6,7 @@
     "npm": "6.10.0",
     "node": "12.7.0"
   },
-  "proxy": "http://localhost:4000",
+  // "proxy": "http://localhost:4000",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
