@@ -40,7 +40,7 @@ const Contact = ({ values, handleChange, errors, touched }) => {
               { resetForm, setStatus, setErrors, setSubmitting }
             ) => {
               setStatus({ success: false });
-              const appURL = "/send";
+              const appURL = "http://localhost:4000/send";
               try {
                 axios({
                   method: "post",
