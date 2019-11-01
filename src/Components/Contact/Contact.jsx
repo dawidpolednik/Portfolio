@@ -40,7 +40,7 @@ const Contact = ({ values, handleChange, errors, touched }) => {
               { resetForm, setStatus, setErrors, setSubmitting }
             ) => {
               setStatus({ success: false });
-              const appURL = "https://dawidpolednik.herokuapp.com/send";
+              const appURL = "/send";
               try {
                 axios({
                   method: "post",
