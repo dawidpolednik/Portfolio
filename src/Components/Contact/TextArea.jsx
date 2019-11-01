@@ -12,6 +12,7 @@ const TextArea = ({ name, placeholder, value, onChange }) => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        style={{ resize: "none" }}
       ></textarea>
       <span className={style.focusBorder}>
         <i></i>
