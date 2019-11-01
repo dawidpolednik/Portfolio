@@ -40,10 +40,10 @@ const Contact = ({ values, handleChange, errors, touched }) => {
               { resetForm, setStatus, setErrors, setSubmitting }
             ) => {
               setStatus({ success: false });
-              const appURL = "http://localhost:4000/send";
+              const appURL = "https://server-nodemailer.herokuapp.com/send";
               try {
                 axios({
-                  method: "post",
+                  method: "POST",
                   url: appURL,
                   data: {
                     name: values.name,
