@@ -9,7 +9,7 @@ const Input = ({ name, placeholder, value, onChange }) => {
         <input
           name={name}
           id={name}
-          className={style.effect}
+          className={`${style.formField} ${style.effect}`}
           placeholder={placeholder}
           value={value}
           onChange={onChange}

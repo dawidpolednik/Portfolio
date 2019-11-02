@@ -15,22 +15,20 @@ class Technologies extends Component {
   renderImage = () => {
     const { images } = this.state;
     return images.map(({ imageRef, title }) => (
-      <>
-        <ScrollAnimation
-          animateIn="fadeInLeftBig"
-          duration={1}
-          initiallyVisible={false}
-          animateOnce
-          animatePreScroll
-        >
-          <div className={styles.imgSection}>
-            <div className={styles.imgContainer}>
-              <img className={styles.img} src={imageRef} alt=""></img>
-            </div>
-            <p className={styles.imgHeader}>{title}</p>
+      <ScrollAnimation
+        animateIn="fadeInLeftBig"
+        duration={1}
+        initiallyVisible={false}
+        animateOnce
+        animatePreScroll
+      >
+        <div className={styles.imgSection}>
+          <div className={styles.imgContainer}>
+            <img className={styles.img} src={imageRef} alt=""></img>
           </div>
-        </ScrollAnimation>
-      </>
+          <p className={styles.imgHeader}>{title}</p>
+        </div>
+      </ScrollAnimation>
     ));
   };
   render() {

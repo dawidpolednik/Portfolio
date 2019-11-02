@@ -35,7 +35,7 @@
             width: 40%;
             border: 2px solid white;
             border-radius: 20px;
-            background: #eee;
+            
             background: #16222A;
             text-align: center;
             overflow: hidden;
@@ -92,7 +92,7 @@
                         line-height: 1rem;
                         &:hover,&:focus, &:active{
                             cursor: pointer;
-                            background-color: #283D4B;
+                            // background-color: #283D4B;
                         }
                         
                         &::placeholder { 
@@ -122,12 +122,12 @@
                     .effect ~ .focusBorder:before,
                     .effect ~ .focusBorder:after{content: "";
                          position: absolute; 
-                         bottom: -15px;  top:0; right: 0; width: 0; height: 2px; background-color: green; transition: 0.2s; transition-delay: 0.2s;}
+                         bottom: -15px;  top:0; right: 0; width: 0; height: 2px; background-color: #283D4B; transition: 0.2s; transition-delay: 0.2s;}
                     .effect ~ .focusBorder:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
                     .effect ~ .focusBorder i:before,
                     .effect ~ .focusBorder i:after{content: ""; 
                         position: absolute;
-                         top: 0; left: 0; width: 2px; height: 0; background-color: green; transition: 0.2s;}
+                         top: 0; left: 0; width: 2px; height: 0; background-color: #283D4B; transition: 0.2s;}
                     .effect ~ .focusBorder i:after{left: auto; right: 0; top: auto; bottom: 0px; transition-delay: 0.4s;}
                     .effect:focus ~ .focusBorder:before,
                     .effect:focus ~ .focusBorder:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
@@ -147,6 +147,9 @@
                     grid-template-columns: 140px 120px;
                     padding: 25px 0 0;
                     grid-gap: 40px;
+
+                    
+                       
                     .formButton{
                         font-family: $secondFont;
                         font-weight:300;
@@ -172,6 +175,7 @@
                     }
                 }
             }
+            
             .confirmationContainer{
                 height:0;
                 z-index: 70;

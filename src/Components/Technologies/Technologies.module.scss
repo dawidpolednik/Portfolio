@@ -1,9 +1,24 @@
 @import "../../assets/fonts";
 @import "../../assets//styles/variables.scss";
 
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
 .container {
-  // -webkit-overflow-scrolling: touch;
-  // overflow-y: scroll;
   width: 100%;
   background-color: #eee;
   .technologiesHeader {
@@ -52,10 +67,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       .imgContainer {
         text-align: center;
         width: 120px;
         height: 120px;
+        transition: transform 0.5s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          animation: bounce 1s infinite alternate;
+          -webkit-animation: bounce 1s infinite alternate;
+        }
         .img {
           width: auto;
           height: 100%;
