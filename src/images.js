@@ -84,7 +84,7 @@ const projectsImage = [
     imageRef: require("./img/code.PNG"),
     title: "Detect Labels Comparison",
     description:
-      "Aplikacja konsolowa Node.js porównująca skuteczności algorytmow etykietowania obrazów w oparciu o usługi 3 najpopularniejszych dostawców chmurowych. Dla danego zbioru testowego usługami  badane w symulacji to usługi Cognitive Services, Amazon Rekognition oraz Google Cloud Vision. Testowana funkcjonalność tp etykietowanie obrazu.",
+      "Aplikacja konsolowa Node.js porównująca skuteczności algorytmów etykietowania obrazów w oparciu o usługi 3 najpopularniejszych dostawców chmurowych. Dla danego zbioru testowego usługami  badanymi podczas symulacji to usługi Cognitive Services, Amazon Rekognition oraz Google Cloud Vision. Testowaną funkcjonalnością jest etykietowanie (tagowanie) obrazu.",
     tools:
       "Node.js, Gulp, ExcelJS , Microsoft Excel, PostMan, Lodash, GitKraken",
     link: "https://github.com/dawidpolednik/Detect-Labels-Comparison"
