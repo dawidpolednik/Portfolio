@@ -1,5 +1,10 @@
 @import '../../assets/fonts';
 @import '../../assets//styles/variables.scss';
+
+.label{
+    display: none;
+}
+
 .container{
     
     width: 100%;
@@ -27,7 +32,7 @@
         background-color: #283D4B;
         padding: 70px 0 10px;
         .contactSection{
-            width: 35%;
+            width: 40%;
             border: 2px solid white;
             border-radius: 20px;
             background: #eee;
@@ -69,7 +74,7 @@
                 }
                 .col{
                     float: left; 
-                    width: 60%; 
+                    width: 70%; 
                     margin: 20px 0; 
                     position: relative;
                     font-weight: 300;
@@ -162,6 +167,7 @@
                             font-size: 0.8rem;
                             font-weight: bold;
                             border: 2px solid black;
+                            outline: none;
                         }
                     }
                 }
