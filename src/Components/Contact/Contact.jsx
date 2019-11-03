@@ -21,7 +21,6 @@ const Contact = ({ values, handleChange, errors, touched }) => {
       </div>
       <div className={styles.contactBackground}>
         <div className={styles.contactSection}>
-          <h3 className={styles.contactSubheader}>Napisz do mnie !</h3>
           <Formik
             initialValues={{ name: "", email: "", message: "" }}
             validationSchema={Yup.object().shape({
