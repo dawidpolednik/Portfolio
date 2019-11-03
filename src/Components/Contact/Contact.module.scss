@@ -32,11 +32,8 @@
         background-color: #283D4B;
         padding: 70px 0 10px;
         .contactSection{
-            width: 40%;
-            border: 2px solid white;
-            border-radius: 20px;
-            
-            background: #16222A;
+            width: 100%;
+            background: #283D4B;
             text-align: center;
             overflow: hidden;
             .contactSubheader{
@@ -74,7 +71,7 @@
                 }
                 .col{
                     float: left; 
-                    width: 70%; 
+                    width: 30%; 
                     margin: 20px 0; 
                     position: relative;
                     font-weight: 300;
@@ -92,7 +89,7 @@
                         line-height: 1rem;
                         &:hover,&:focus, &:active{
                             cursor: pointer;
-                            // background-color: #283D4B;
+                            
                         }
                         
                         &::placeholder { 
@@ -122,12 +119,12 @@
                     .effect ~ .focusBorder:before,
                     .effect ~ .focusBorder:after{content: "";
                          position: absolute; 
-                         bottom: -15px;  top:0; right: 0; width: 0; height: 2px; background-color: #283D4B; transition: 0.2s; transition-delay: 0.2s;}
+                         bottom: -15px;  top:0; right: 0; width: 0; height: 2px; background-color: #16222A ;transition: 0.2s; transition-delay: 0.2s;}
                     .effect ~ .focusBorder:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
                     .effect ~ .focusBorder i:before,
                     .effect ~ .focusBorder i:after{content: ""; 
                         position: absolute;
-                         top: 0; left: 0; width: 2px; height: 0; background-color: #283D4B; transition: 0.2s;}
+                         top: 0; left: 0; width: 2px; height: 0; background-color: #16222A; transition: 0.2s;}
                     .effect ~ .focusBorder i:after{left: auto; right: 0; top: auto; bottom: 0px; transition-delay: 0.4s;}
                     .effect:focus ~ .focusBorder:before,
                     .effect:focus ~ .focusBorder:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
@@ -203,22 +200,18 @@
         }
         .contactBackground{
             width: 100%;
-            padding: 70px 0 20px;
+            padding: 20px 0 20px;
             .contactSection{
                 border-radius: 0;
                 width: 100% !important;
                 border-left: none;
                 border-right: none;
-                .contactSubheader{  
-                    font-size: 1.5rem; 
-                    padding: 15px 0;  
-                }
                 .contactForm{
                     padding: 20px 0 60px;
                     width: 100%;
                     .col{
                         float: left; 
-                        width: 80%;
+                        width: 90%;
                         .effect{
                             font-size: 0.8rem;
                             line-height: 1rem;
@@ -261,17 +254,12 @@
             }
         }
         .contactBackground{
+            padding: 20px 0;
             .contactSection{
                 border-radius: 0;
                 width: 100% !important;
-                border-left: none;
-                border-right: none;
-                .contactSubheader{  
-                    font-size: 1.5rem; 
-                    padding: 15px 0;  
-                }
                 .contactForm{
-                    padding: 20px 0 60px;
+                    padding: 20px 0 20px;
                     width: 100%;
                     .col{
                         float: left; 
@@ -307,30 +295,7 @@
     }
 
 }
-// @media screen and (-webkit-min-device-pixel-ratio:0) {
-    
-//     input[type="email"]:hover,
-//     input[type="number"]:hover,
-//     input[type="search"]:hover,
-//     input[type="text"]:hover,
-//     input[type="tel"]:hover,
-//     input[type="url"]:hover,
-//     input[type="password"]:hover,
-//     textarea:hover,input:hover,textarea:focus,input:focus,textarea:active,input:active,
-//     select:hover{font-size: initial !important;}
-// }
-// @media (min-width: 768px) {
-//     input[type="email"]:hover,
-//     input[type="number"]:hover,
-//     input[type="search"]:hover,
-//     input[type="text"]:hover,
-//     input[type="tel"]:hover,
-//     input[type="url"]:hover,
-//     input[type="password"]:hover,
-//     input:hover,
-//     textarea:hover,
-//     select:hover{font-size: inherit;}
-// }
+
 @include breakpoint-only("xs") {
     .container{  
         .contactHeader{
@@ -340,6 +305,7 @@
             }
         }
         .contactBackground{
+            padding: 20px 0;
             .contactSection{
                 border-radius: 0;
                 width: 80%;
@@ -391,6 +357,7 @@
             }
         }
         .contactBackground{
+            padding: 15px 0 20px;
             .contactSection{
                 border-radius: 0;
                 width: 70%;
@@ -494,6 +461,7 @@
             }
         }
         .contactBackground{
+            padding: 15px 0 20px;
             .contactSection{
                 border-radius: 0;
                 width: 60%;
@@ -505,7 +473,7 @@
                     padding: 30px 0 60px;
                     height: 700px;
                     .col{
-                        width: 60%;
+                        width: 80%;
                         .effect{
                             font-size: 1rem;
                             line-height: 1.2rem;
@@ -547,6 +515,7 @@
             }
         }
         .contactBackground{
+            padding: 20px 0;
             .contactSection{
                 border-radius: 0;
                 width: 60%;
@@ -558,7 +527,7 @@
                     padding: 30px 0 60px;
                     height: 700px;
                     .col{
-                        width: 60%;
+                        width:80%;
                         .effect{
                             font-size: 1rem;
                             line-height: 1.2rem;
@@ -600,9 +569,10 @@
             }
         }
         .contactBackground{
+            padding: 20px 0;
             .contactSection{
                 border-radius: 0;
-                width: 60%;
+                width: 100%;
                 .contactSubheader{  
                     font-size: 1.8rem; 
                     padding: 22px 0;  
@@ -611,7 +581,7 @@
                     padding: 30px 0 60px;
                     height: 700px;
                     .col{
-                        width: 60%;
+                        width: 40%;
                         .effect{
                             font-size: 1rem;
                             line-height: 1.2rem;
