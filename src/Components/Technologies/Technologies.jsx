@@ -14,13 +14,14 @@ class Technologies extends Component {
   }
   renderImage = () => {
     const { images } = this.state;
-    return images.map(({ imageRef, title }) => (
+    return images.map(({ id, imageRef, title }) => (
       <ScrollAnimation
         animateIn="fadeInLeftBig"
         duration={1}
         initiallyVisible={false}
         animateOnce
         animatePreScroll
+        key={id}
       >
         <div className={styles.imgSection}>
           <div className={styles.imgContainer}>

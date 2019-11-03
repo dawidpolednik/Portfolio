@@ -4,7 +4,7 @@ import style from "./Contact.module.scss";
 const TextArea = ({ name, placeholder, value, onChange }) => {
   return (
     <>
-      <label className={style.label} for={name}></label>
+      <label className={style.label} htmlFor={name}></label>
       <div className={`${style.col}`}>
         <textarea
           name={name}

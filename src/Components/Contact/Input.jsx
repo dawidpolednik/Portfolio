@@ -4,7 +4,7 @@ import style from "./Contact.module.scss";
 const Input = ({ name, placeholder, value, onChange }) => {
   return (
     <>
-      <label className={style.label} for={name}></label>
+      <label className={style.label} htmlFor={name}></label>
       <div className={`${style.col}`}>
         <input
           name={name}

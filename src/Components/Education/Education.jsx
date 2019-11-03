@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Education.module.scss";
 import ScrollAnimation from "react-animate-on-scroll";
 import DoubleAngle from "../DoubleAngle/DoubleAngle";
+import LifeEvent from "./LifeEvent";
+import { lifeEvents } from "./lifeEvents";
 
 const Education = () => {
   return (
@@ -20,36 +22,14 @@ const Education = () => {
         >
           <div className={styles.educationSection}>
             <ul className={styles.timeline}>
-              <li className={styles.event} data-date="02.2018">
-                <h3>Studia I Stopnia</h3>
-                <p>
-                  Tytuł inżyniera na kierunku Informatyka na wydziale
-                  Automatyki, Elektrotechniki i Informatyki na Politechnice
-                  Opolskiej w Opolu.
-                </p>
-              </li>
-              <li className={styles.event} data-date="02.2019-05.2019">
-                <h3>SoftServe</h3>
-                <p>WebUI Development: React Front-End Developer (IT Academy)</p>
-              </li>
-              <li
-                className={styles.event}
-                id="date"
-                data-date="08.2019-10.2019"
-              >
-                <h3>Euvic(Internship)</h3>
-                <p>Junior Front-End Developer</p>
-              </li>
-
-              <li className={styles.event} data-date="06.2019">
-                <h3>Studia II Stopnia</h3>
-                <p>
-                  Tytuł magistra na kierunku Informatyka na wydziale Automatyki,
-                  Elektroniki i Informatyki na Politechnice Śląskiej w
-                  Gliwicach.
-                </p>
-                <p>Specjalność: Internet i Technologie Sieciowe</p>
-              </li>
+              {lifeEvents.map(({ id, date, title, description }) => (
+                <LifeEvent
+                  key={id}
+                  date={date}
+                  title={title}
+                  description={description}
+                />
+              ))}
             </ul>
           </div>
         </ScrollAnimation>

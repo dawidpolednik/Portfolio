@@ -73,7 +73,7 @@ const projectsImage = [
     imageRef: require("./img/delfinagram.png"),
     title: "Delfinagram App",
     description:
-      "Aplikacja zbudowana w oparciu o popularny portal społecznościowy Instagram z uwględnieniem widoków mobilnych. Portal umożliwiający dodawanie oraz zarządzanie znajomymi, postami, zdjęciami oraz danymi użytkownika aplikacji. Projekt zrealizowany za pomocą biblioteki React oraz Redux.",
+      "Aplikacja zbudowana w oparciu o popularny portal społecznościowy Instagram z uwględnieniem widoków mobilnych. Portal umożliwiający dodawanie oraz zarządzanie znajomymi, postami, zdjęciami oraz danymi użytkownika aplikacji. Projekt zrealizowany za pomocą biblioteki React oraz Redux. Wykorzystujący popularny framework interfejsu użytkownika Material UI.",
     tools:
       "React, Redux, React-Router-DOM, SASS(SCSS), MaterialUI, GitKraken, PostMan",
     link: "https://github.com/dawidpolednik/DelfinagramAPP"
