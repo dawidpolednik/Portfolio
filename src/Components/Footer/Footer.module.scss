@@ -76,19 +76,18 @@
       // width:12%;
       margin: auto;
       // padding: 15px 0;
+      overflow: hidden;
       & i {
         color: #eee;
-        line-height: 30px;
         font-size: 30px;
         padding: 10px 15px;
-        cursor: pointer;
+        transition-duration: 0.3s;
         &:hover,
         &:focus,
         &:active {
-          margin: -6px;
-          transition-duration: 0.3s;
+          cursor: pointer;
           color: #4267b2;
-          font-size: 34px;
+          transform: scale(1.25);
         }
       }
     }
