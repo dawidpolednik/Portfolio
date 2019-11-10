@@ -26,7 +26,7 @@ const Project = ({ id, imageRef, title, description, tools, link }) => (
         <h4 className={styles.projectTitle}>{title}</h4>
         <p className={styles.projectDescription}>{description}</p>
         <p className={styles.projectTools}>{`Narzędzia: ${tools}`}</p>
-        {console.log(id)}
+
         {id !== 2 && id !== 1 ? (
           <div className={styles.buttonsContainer}>
             <a
