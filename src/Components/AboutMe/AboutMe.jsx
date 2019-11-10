@@ -16,7 +16,7 @@ const AboutMe = () => {
             stron internetowych.{" "}
           </p>
           <p>
-            Mam ok. półroczne praktyczne doświadczenia w programowaniu aplikacji
+            Mam półroczne praktyczne doświadczenie w programowaniu aplikacji
             internetowych/mobilnych przy użyciu HTML5, CSS3 oraz języka
             JavaScript z wykorzystaniem bibliotek React/React Native.{" "}
           </p>
@@ -25,9 +25,9 @@ const AboutMe = () => {
             inne technologie.
           </p>
           <p>
-            Jestem świeżo upieczonym absolwentem studiów II stopnia kierunku
-            Informatyka na Wydziale Automatyki, Elektroniki i Informatyki
-            Politechniki Śląskiej.
+            Jestem absolwentem studiów II stopnia kierunku Informatyka na
+            Wydziale Automatyki, Elektroniki i Informatyki Politechniki
+            Śląskiej.
           </p>
           <p>
             Poza zamiłowaniem do programowania webowego interesuję się trójbojem
