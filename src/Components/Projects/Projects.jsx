@@ -8,17 +8,20 @@ const Projects = () => {
   const [images] = useState(imageProjectsLoader());
 
   const renderProject = () =>
-    images.map(({ key, id, imageRef, title, description, tools, link }) => (
-      <Project
-        key={key}
-        id={id}
-        imageRef={imageRef}
-        title={title}
-        description={description}
-        tools={tools}
-        link={link}
-      />
-    ));
+    images.map(
+      ({ key, id, imageRef, title, description, tools, link, liveDemo }) => (
+        <Project
+          key={key}
+          id={id}
+          imageRef={imageRef}
+          title={title}
+          description={description}
+          tools={tools}
+          link={link}
+          liveDemo={liveDemo}
+        />
+      )
+    );
 
   return (
     <section className={styles.container} id="projects">

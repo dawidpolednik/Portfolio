@@ -88,14 +88,19 @@ const projectsImage = [
     tools:
       "Node.js, Gulp, ExcelJS , Microsoft Excel, PostMan, Lodash, GitKraken",
     link: "https://github.com/dawidpolednik/Detect-Labels-Comparison"
+  },
+  {
+    key: 3,
+    id: 3,
+    imageRef: require("./img/currencyConverter.png"),
+    title: "Currency Converter APP",
+    description:
+      "Aplikacja internetowa służąca do przeliczania transakcji walutowych. Umożliwiająca definiowanie swoich własnych transakcji, wraz z ich zarządzaniem. Aplikacja odświeżająca dane na żywo, w momencie ich modyfikacji. Całość projektu zbudowano za pomocą bibliotek React oraz Redux.",
+    tools: "React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ",
+    link: "https://github.com/dawidpolednik/currency-converter",
+    liveDemo: "https://converter-currency-app.herokuapp.com/"
   }
 ];
 export const imageProjectsLoader = () => {
   return projectsImage;
 };
-
-// async function imageLoader() {
-//     const request = await fetch('https://my/images/on/a/cdn');
-//     const response = await request.json();
-//     return response.images
-//   }

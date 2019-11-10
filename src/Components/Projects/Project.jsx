@@ -4,7 +4,15 @@ import ScrollAnimation from "react-animate-on-scroll";
 
 const titleButtons = ["GitHub", "Live Demo"];
 
-const Project = ({ id, imageRef, title, description, tools, link }) => (
+const Project = ({
+  id,
+  imageRef,
+  title,
+  description,
+  tools,
+  link,
+  liveDemo
+}) => (
   <ScrollAnimation
     animateIn="fadeInDown"
     initiallyVisible={false}
@@ -39,7 +47,7 @@ const Project = ({ id, imageRef, title, description, tools, link }) => (
             </a>
             <a
               className={styles.buttonItem}
-              href={link}
+              href={liveDemo}
               target="_blank"
               rel="noopener noreferrer"
             >
