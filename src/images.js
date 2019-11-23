@@ -99,6 +99,17 @@ const projectsImage = [
     tools: "React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ",
     link: "https://github.com/dawidpolednik/currency-converter",
     liveDemo: "https://converter-currency-app.herokuapp.com/"
+  },
+  {
+    key: 4,
+    id: 4,
+    imageRef: require("./img/citiesSearcher.png"),
+    title: "Cities Searcher APP",
+    description:
+      "Aplikacja internetowa służąca do wyświetlania informacji na temat najbardziej zanieczyszczonych miast na podstawie wcześniej wczytanego państwa. Aplikacja wykorzystująca dane z dwóch otwartych platform: OpenAQ oraz MediaWiki. Całość projektu zbudowano za pomocą bibliotek React oraz Redux.",
+    tools: "React, Redux, SASS(SCSS) , ES6, MaterialUI, GitKraken, ",
+    link: "https://github.com/dawidpolednik/cities-searcher",
+    liveDemo: "https://cities-searcher.herokuapp.com/"
   }
 ];
 export const imageProjectsLoader = () => {
