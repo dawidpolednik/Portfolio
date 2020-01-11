@@ -18,7 +18,7 @@ const AboutMe = () => {
           <p>
             Mam półroczne praktyczne doświadczenie w programowaniu aplikacji
             internetowych/mobilnych przy użyciu HTML5, CSS3 oraz języka
-            JavaScript z wykorzystaniem bibliotek React/React Native.{" "}
+            JavaScript z wykorzystaniem bibliotek React/React Native.
           </p>
           <p>
             Jestem osobą stawiającą na ciągły rozwój, dlatego nie zamykam się na
@@ -28,6 +28,9 @@ const AboutMe = () => {
             Jestem absolwentem studiów II stopnia kierunku Informatyka na
             Wydziale Automatyki, Elektroniki i Informatyki Politechniki
             Śląskiej.
+          </p>
+          <p>
+            Obecnie pracuję na stanowisku Front-End Developera w firmie  Pirios S.A. zlokalizowanej w Krakowie. 
           </p>
           <p>
             Poza zamiłowaniem do programowania webowego interesuję się trójbojem

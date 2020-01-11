@@ -42,13 +42,15 @@ const images = [
     title: "Sass(SCSS)",
     description: "bar"
   },
-  { id: 9, imageRef: require("./img/9.png"), title: "Git", description: "bar" },
+  
   {
-    id: 10,
-    imageRef: require("./img/10.svg"),
-    title: "GitKraken",
-    description: "bar"
+    id: 9,
+    imageRef: require("./img/13.svg"),
+  title: "Angular",
+  description: 'bar'
   },
+  { id: 10, imageRef: require("./img/9.png"), title: "Git", description: "bar" }
+ ,
   {
     id: 11,
     imageRef: require("./img/11.png"),
@@ -59,6 +61,12 @@ const images = [
     id: 12,
     imageRef: require("./img/12.png"),
     title: "Scrum",
+    description: "bar"
+  },
+  {
+    id: 13,
+    imageRef: require("./img/10.svg"),
+    title: "GitKraken",
     description: "bar"
   }
 ];

@@ -1,5 +1,12 @@
 export const lifeEvents = [
   {
+    id: 0,
+    date: "12.2019 - obecnie",
+    title: "Pirios S.A.",
+    description:
+      "Front-End Developer. Realizacja projektu w oparciu o framework Angular."
+  },
+  {
     id: 1,
     date: "10.2019",
     title: "Studia II Stopnia",
