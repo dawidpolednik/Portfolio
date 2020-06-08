@@ -6,7 +6,7 @@ import DoubleAngle from "../DoubleAngle/DoubleAngle";
 
 class Technologies extends Component {
   state = {
-    images: []
+    images: [],
   };
 
   componentDidMount() {
@@ -14,7 +14,7 @@ class Technologies extends Component {
   }
   renderImage = () => {
     const { images } = this.state;
-    return images.map(({ id, imageRef, title }) => (
+    return images.map(({ id, imageRef, title, description }) => (
       <ScrollAnimation
         animateIn="fadeInLeftBig"
         duration={1}
@@ -25,7 +25,7 @@ class Technologies extends Component {
       >
         <div className={styles.imgSection}>
           <div className={styles.imgContainer}>
-            <img className={styles.img} src={imageRef} alt=""></img>
+            <img className={styles.img} src={imageRef} alt={description}></img>
           </div>
           <p className={styles.imgHeader}>{title}</p>
         </div>

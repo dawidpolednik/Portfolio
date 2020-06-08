@@ -10,13 +10,13 @@ const AboutMe = () => {
           <h3 className={styles.title}>O mnie.</h3>
           <p className={styles.subTitle}>Kim jestem?</p>
           <p>
-            Nazywam się Dawid Polednik, jestem{" "}
+            Nazywam się Dawid Polednik, jestem
             <strong>Junior Front-End Developerem</strong> pochodzącym z małego
             miasteczka spod Raciborza. Od ponad roku zajmuję się tworzeniem
-            stron internetowych.{" "}
+            stron internetowych.
           </p>
           <p>
-            Mam półroczne praktyczne doświadczenie w programowaniu aplikacji
+            Mam roczne praktyczne doświadczenie w programowaniu aplikacji
             internetowych/mobilnych przy użyciu HTML5, CSS3 oraz języka
             JavaScript z wykorzystaniem bibliotek React/React Native.
           </p>
@@ -30,7 +30,8 @@ const AboutMe = () => {
             Śląskiej.
           </p>
           <p>
-            Obecnie pracuję na stanowisku Front-End Developera w firmie  Pirios S.A. zlokalizowanej w Krakowie. 
+            Obecnie pracuję na stanowisku Front-End Developera w firmie Pirios
+            S.A. zlokalizowanej w Krakowie.
           </p>
           <p>
             Poza zamiłowaniem do programowania webowego interesuję się trójbojem
