@@ -13,7 +13,7 @@ const LandingPage = () => {
       </div>
       <div className={styles.bannerText}>
         <h2 className={styles.bannerName}>Dawid Polednik</h2>
-        <h1 className={styles.bannerTitle}> Junior Front End Developer</h1>
+        <h1 className={styles.bannerTitle}>Front End Developer</h1>
         <hr className={styles.bannerHR} />
         <div className={styles.socialLinks}>
           {socialsInfo.map(({ id, href, className }) => (

@@ -11,12 +11,12 @@ const AboutMe = () => {
           <p className={styles.subTitle}>Kim jestem?</p>
           <p>
             Nazywam się Dawid Polednik, jestem
-            <strong>Junior Front-End Developerem</strong> pochodzącym z małego
+            <strong>&nbsp;Front-End Developerem</strong> pochodzącym z małego
             miasteczka spod Raciborza. Od ponad roku zajmuję się tworzeniem
             stron internetowych.
           </p>
           <p>
-            Mam roczne praktyczne doświadczenie w programowaniu aplikacji
+            Mam półtoraroczne praktyczne doświadczenie w programowaniu aplikacji
             internetowych/mobilnych przy użyciu HTML5, CSS3 oraz języka
             JavaScript z wykorzystaniem bibliotek React/React Native.
           </p>

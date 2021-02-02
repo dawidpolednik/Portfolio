@@ -1,5 +1,5 @@
-@import "../../assets/fonts";
-@import "../../assets//styles/variables.scss";
+@import '../../assets/fonts';
+@import '../../assets//styles/variables.scss';
 
 @keyframes bounce {
   from {
@@ -57,9 +57,7 @@
     margin: 0 auto;
     width: 80%;
     display: grid;
-
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-
     grid-gap: 50px 20px;
 
     .imgSection {
@@ -70,7 +68,7 @@
 
       .imgContainer {
         text-align: center;
-        width: 120px;
+        width: 100%;
         height: 120px;
         transition: transform 0.5s ease-in-out;
         &:hover {
@@ -165,7 +163,7 @@
   }
 }
 
-@include breakpoint-only("xs") {
+@include breakpoint-only('xs') {
   .container {
     .technologiesHeader {
       min-height: 128px;
