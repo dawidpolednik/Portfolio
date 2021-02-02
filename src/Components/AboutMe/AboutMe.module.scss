@@ -1,14 +1,10 @@
-@import "../../assets/fonts";
-@import "../../assets//styles/variables.scss";
-
-@import "../../assets/styles/variables.scss";
+@import '../../assets/fonts';
+@import '../../assets//styles/variables.scss';
 
 .aboutContainer {
   display: flex;
   justify-content: center;
-
-  background-image: linear-gradient(black, black), url("../../img/weights.jpg");
-
+  background-image: linear-gradient(black, black), url('../../img/weights.jpg');
   background-blend-mode: saturation;
   background-position: center;
   background-attachment: fixed;
@@ -43,6 +39,12 @@
       letter-spacing: 1px;
       padding: 8px 0;
     }
+    p:not(.subTitle) {
+      text-align: justify;
+      text-justify: distribute;
+      text-align-last: left;
+    }
+
     .angleContainer {
       display: flex;
       justify-content: center;
@@ -89,11 +91,15 @@
         font-size: 15px;
         padding: 6px 0;
       }
+
+      p:not(.subTitle) {
+        text-align: left;
+      }
     }
   }
 }
 
-@include breakpoint-only("xs") {
+@include breakpoint-only('xs') {
   .aboutContainer {
     .aboutMeSection {
       max-width: 1180px;
@@ -115,7 +121,7 @@
   }
 }
 
-@include breakpoint-only("sm") {
+@include breakpoint-only('sm') {
   .aboutContainer {
     .aboutMeSection {
       width: 90%;

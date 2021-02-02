@@ -92,12 +92,6 @@ const images = [
   },
   {
     id: 17,
-    imageRef: require('./img/parcel.png'),
-    title: 'Parcel',
-    description: 'bar',
-  },
-  {
-    id: 18,
     imageRef: require('./img/webpack.png'),
     title: 'Webpack',
     description: 'bar',
@@ -156,7 +150,7 @@ const projectsImage = [
     imageRef: require('./img/amongUs.PNG'),
     title: 'Among Us Memory Game',
     description:
-      'Gra wzorowana na jednej z minigier Among Us. Całość projektu zudowano za pomocą języka Vanilla JS oraz TypeScript.',
+      'Gra wzorowana na jednej z minigier Among Us. Całość projektu zbudowano za pomocą języka Vanilla JS oraz TypeScript.',
     tools: 'Vanilla JS, ES6, TypeScript, SASS(SCSS) , Parcel',
     link: 'https://github.com/dawidpolednik/AmongUs',
   },
