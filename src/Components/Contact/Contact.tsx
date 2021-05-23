@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import React, { FC } from 'react';
 import * as Yup from 'yup';
 
-import DoubleAngle from '../DoubleAngle/DoubleAngle';
+import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './Contact.module.scss';
 import { Error } from './Errors';
 import Input from './Input';

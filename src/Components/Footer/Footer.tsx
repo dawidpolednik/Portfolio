@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
-// import CV_PL from '../../assets/cv/CV(pl).pdf';
-// import CV_ANG from '../../assets/cv/CV(ang).pdf';
-import socialsInfo from '../SocialLinks/socialInfo';
+import { socialMedia } from '../SocialLinks/socialMedia';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
 const Footer = () => {
@@ -43,7 +41,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.socialLinks}>
-          {socialsInfo.map(({ id, href, className }) => (
+          {socialMedia.map(({ id, href, className }) => (
             <SocialLinks key={id} href={href} className={className} />
           ))}
         </div>

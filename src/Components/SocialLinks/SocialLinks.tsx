@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
+interface SocialLinkProps {
+  href: string;
+  className: string;
+}
 
-const SocialLinks = ({ href, className }) => {
+const SocialLink: FC<SocialLinkProps> = ({ href, className }) => {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
       <i className={`${className} `} aria-hidden="true"></i>
     </a>
   );
 };
-export default SocialLinks;
+export default SocialLink;

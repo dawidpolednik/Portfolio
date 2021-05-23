@@ -1,37 +1,35 @@
-import React, { Component } from 'react';
-import styles from './App.module.scss';
+import React, { FC, useMemo } from 'react';
 import { Link } from 'react-scroll';
-import LandingPage from './Components/LandingPage/LandingPage';
+
+import styles from './App.module.scss';
 import AboutMe from './Components/AboutMe/AboutMe';
-import Education from './Components/Education/Education';
-import Technologies from './Components/Technologies/Technologies';
-import Projects from './Components/Projects/Projects';
 import Contact from './Components/Contact/Contact';
+import Education from './Components/Education/Education';
 import Footer from './Components/Footer/Footer';
+import LandingPage from './Components/LandingPage/LandingPage';
+import Projects from './Components/Projects/Projects';
+import { Technologies } from './Components/Technologies/Technologies';
 
-class App extends Component {
-  state = {
-    menuItems: [
-      { name: 'Home', toNavigate: 'home' },
-      { name: 'O Mnie', toNavigate: 'aboutMe' },
-      { name: 'Edukacja', toNavigate: 'education' },
-      { name: 'Technologie', toNavigate: 'technologies' },
-      { name: 'Projekty', toNavigate: 'projects' },
-      { name: 'Kontakt', toNavigate: 'contact' },
-    ],
-  };
+const menuItems: MenuItem[] = [
+  { id: 1, name: 'Home', toNavigate: 'home' },
+  { id: 2, name: 'O Mnie', toNavigate: 'aboutMe' },
+  { id: 3, name: 'Edukacja', toNavigate: 'education' },
+  { id: 4, name: 'Technologie', toNavigate: 'technologies' },
+  { id: 5, name: 'Projekty', toNavigate: 'projects' },
+  { id: 6, name: 'Kontakt', toNavigate: 'contact' },
+];
 
-  getMenuList = () => {
-    const { menuItems } = this.state;
-    return (
+const App: FC = () => {
+  const renderNavbar = useMemo(
+    () => (
       <nav className={`${styles.toolbar} ${styles.resetBlur}`}>
         <ul className={styles.navigationList}>
-          {menuItems.map((menuItem, index) => (
+          {menuItems.map(({ id, name, toNavigate }) => (
             <Link
-              activeClass="active"
-              key={index}
+              key={id}
               className={styles.navigationItem}
-              to={menuItem.toNavigate}
+              activeClass="active"
+              to={toNavigate}
               spy={true}
               smooth={true}
               hashSpy={true}
@@ -41,31 +39,31 @@ class App extends Component {
               isDynamic={true}
               ignoreCancelEvents={false}
             >
-              {menuItem.name}
+              {name}
             </Link>
           ))}
         </ul>
       </nav>
-    );
-  };
-  render() {
-    return (
-      <>
-        <div className={styles.bgImage}>
-          {this.getMenuList()}
-          <div className={styles.container}>
-            <LandingPage />
-          </div>
+    ),
+    []
+  );
+
+  return (
+    <>
+      <div className={styles.bgImage}>
+        {renderNavbar}
+        <div className={styles.container}>
+          <LandingPage />
         </div>
-        <AboutMe />
-        <Education />
-        <Technologies />
-        <Projects />
-        <Contact />
-        <Footer />
-      </>
-    );
-  }
-}
+      </div>
+      <AboutMe />
+      <Education />
+      <Technologies />
+      <Projects />
+      <Contact />
+      <Footer />
+    </>
+  );
+};
 
 export default App;

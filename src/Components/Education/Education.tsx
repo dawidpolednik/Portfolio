@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Education.module.scss';
 import ScrollAnimation from 'react-animate-on-scroll';
-import DoubleAngle from '../DoubleAngle/DoubleAngle';
+import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import LifeEvent from './LifeEvent';
 import { lifeEvents } from './lifeEvents';
 

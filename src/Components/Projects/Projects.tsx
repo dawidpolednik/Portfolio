@@ -1,27 +1,31 @@
-import React, { useState } from "react";
-import styles from "./Projects.module.scss";
-import { imageProjectsLoader } from "../../images";
-import Project from "./Project";
-import DoubleAngle from "../DoubleAngle/DoubleAngle";
+import React, { useMemo, useState } from 'react';
+
+import { projectsLoader } from '../../images';
+import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
+import Project from './Project';
+import styles from './Projects.module.scss';
 
 const Projects = () => {
-  const [images] = useState(imageProjectsLoader());
+  const [projects] = useState<Project[]>(projectsLoader());
 
-  const renderProject = () =>
-    images.map(
-      ({ key, id, imageRef, title, description, tools, link, liveDemo }) => (
-        <Project
-          key={key}
-          id={id}
-          imageRef={imageRef}
-          title={title}
-          description={description}
-          tools={tools}
-          link={link}
-          liveDemo={liveDemo}
-        />
-      )
-    );
+  const renderProjects = useMemo(
+    () =>
+      projects.map(
+        ({ id, image, title, description, tools, gitHub, liveDemo }) => (
+          <Project
+            key={id}
+            id={id}
+            imageRef={image}
+            title={title}
+            description={description}
+            tools={tools}
+            link={gitHub}
+            liveDemo={liveDemo}
+          />
+        )
+      ),
+    [projects]
+  );
 
   return (
     <section className={styles.container} id="projects">
@@ -29,7 +33,7 @@ const Projects = () => {
         <h2 className={styles.projectsTitle}>Zrealizowane Projekty</h2>
       </div>
       <div className={styles.projectsBackground}>
-        <div className={styles.projectsSection}>{renderProject()}</div>
+        <div className={styles.projectsSection}>{renderProjects}</div>
       </div>
       <div className={styles.angleContainer}>
         <DoubleAngle subPage="contact" />

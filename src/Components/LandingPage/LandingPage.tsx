@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./LandingPage.module.scss";
-import Picture from "../../img/polednik.jpg";
-import DoubleAngle from "../DoubleAngle/DoubleAngle";
-import socialsInfo from "../SocialLinks/socialInfo";
-import SocialLinks from "../SocialLinks/SocialLinks";
+import React from 'react';
+import styles from './LandingPage.module.scss';
+import Picture from '../../img/polednik.jpg';
+import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
+import { socialMedia } from '../SocialLinks/socialMedia';
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 const LandingPage = () => {
   return (
@@ -16,7 +16,7 @@ const LandingPage = () => {
         <h1 className={styles.bannerTitle}>Front End Developer</h1>
         <hr className={styles.bannerHR} />
         <div className={styles.socialLinks}>
-          {socialsInfo.map(({ id, href, className }) => (
+          {socialMedia.map(({ id, href, className }) => (
             <SocialLinks key={id} href={href} className={className} />
           ))}
         </div>
