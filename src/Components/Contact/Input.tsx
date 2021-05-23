@@ -1,7 +1,14 @@
-import React from "react";
-import style from "./Contact.module.scss";
+import React, { FC, SyntheticEvent } from 'react';
+import style from './Contact.module.scss';
 
-const Input = ({ name, placeholder, value, onChange }) => {
+interface InputProps {
+  name: string;
+  placeholder: string;
+  value: string;
+  onChange: (e: SyntheticEvent) => void;
+}
+
+const Input: FC<InputProps> = ({ name, placeholder, value, onChange }) => {
   return (
     <>
       <label className={style.label} htmlFor={name}></label>

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styles from "./Technologies.module.scss";
-import { imageLoader } from "../../images";
-import ScrollAnimation from "react-animate-on-scroll";
-import DoubleAngle from "../DoubleAngle/DoubleAngle";
+import React, { Component } from 'react';
+import styles from './Technologies.module.scss';
+import { imageLoader } from '../../images';
+import ScrollAnimation from 'react-animate-on-scroll';
+import DoubleAngle from '../DoubleAngle/DoubleAngle';
 
 class Technologies extends Component {
   state = {
@@ -20,7 +20,6 @@ class Technologies extends Component {
         duration={1}
         initiallyVisible={false}
         animateOnce
-        animatePreScroll
         key={id}
       >
         <div className={styles.imgSection}>

@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./Education.module.scss";
-import ScrollAnimation from "react-animate-on-scroll";
-import DoubleAngle from "../DoubleAngle/DoubleAngle";
-import LifeEvent from "./LifeEvent";
-import { lifeEvents } from "./lifeEvents";
+import React from 'react';
+import styles from './Education.module.scss';
+import ScrollAnimation from 'react-animate-on-scroll';
+import DoubleAngle from '../DoubleAngle/DoubleAngle';
+import LifeEvent from './LifeEvent';
+import { lifeEvents } from './lifeEvents';
 
 const Education = () => {
   return (
@@ -17,8 +17,7 @@ const Education = () => {
           initiallyVisible={false}
           duration={2}
           delay={300}
-          animateOnce
-          animatePreScroll
+          animateOnce={true}
         >
           <div className={styles.educationSection}>
             <ul className={styles.timeline}>

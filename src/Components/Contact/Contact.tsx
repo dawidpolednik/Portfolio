@@ -1,19 +1,21 @@
-import React from "react";
-import { Formik, Form } from "formik";
-import * as Yup from "yup";
-import styles from "./Contact.module.scss";
-import DoubleAngle from "../DoubleAngle/DoubleAngle";
-import Input from "./Input";
-import TextArea from "./TextArea";
-import Errors from "./Errors";
-import axios from "axios";
+import axios from 'axios';
+import { Form, Formik } from 'formik';
+import React, { FC } from 'react';
+import * as Yup from 'yup';
 
-const Contact = ({ values, handleChange, errors, touched }) => {
-  const errorMessages = [
-    "To pole jest wymagane. Minimalna liczba znaków: 5",
-    "Podany adres E-mail jest nieprawidłowy",
-    "To pole jest wymagane. Minimalna liczba znaków: 10"
-  ];
+import DoubleAngle from '../DoubleAngle/DoubleAngle';
+import styles from './Contact.module.scss';
+import { Error } from './Errors';
+import Input from './Input';
+import TextArea from './TextArea';
+
+const errorMessages = [
+  'To pole jest wymagane. Minimalna liczba znaków: 5',
+  'Podany adres E-mail jest nieprawidłowy',
+  'To pole jest wymagane. Minimalna liczba znaków: 10',
+];
+
+const Contact: FC = () => {
   return (
     <section className={styles.container} id="contact">
       <div className={styles.contactHeader}>
@@ -22,48 +24,42 @@ const Contact = ({ values, handleChange, errors, touched }) => {
       <div className={styles.contactBackground}>
         <div className={styles.contactSection}>
           <Formik
-            initialValues={{ name: "", email: "", message: "" }}
+            initialValues={{ name: '', email: '', message: '' }}
             validationSchema={Yup.object().shape({
-              name: Yup.string()
-                .min(5)
-                .required(),
-              email: Yup.string()
-                .email()
-                .required(),
-              message: Yup.string()
-                .min(10)
-                .required()
+              name: Yup.string().min(5).required(),
+              email: Yup.string().email().required(),
+              message: Yup.string().min(10).required(),
             })}
             onSubmit={async (
               values,
               { resetForm, setStatus, setErrors, setSubmitting }
             ) => {
               setStatus({ success: false });
-              const appURL = "https://server-nodemailer.herokuapp.com/send";
+              const appURL = 'https://server-nodemailer.herokuapp.com/send';
               try {
                 axios({
-                  method: "POST",
+                  method: 'POST',
                   url: appURL,
                   data: {
                     name: values.name,
                     email: values.email,
-                    message: values.message
-                  }
+                    message: values.message,
+                  },
                 });
                 resetForm();
-                setStatus({ success: "Wiadomość została wysłana" });
+                setStatus({ success: 'Wiadomość została wysłana' });
                 setSubmitting(false);
               } catch (error) {
-                setStatus({ success: "Coś poszło nie tak." });
+                setStatus({ success: 'Coś poszło nie tak.' });
                 setSubmitting(false);
-                setErrors({ submit: error.message });
+                // setErrors({ submit: error.message });
               }
             }}
             render={props => (
               <Form className={styles.contactForm}>
                 {props.errors.name && (
-                  <Errors
-                    touched={props.touched.name}
+                  <Error
+                    touched={!!props.touched.name}
                     name={props.errors.name}
                     content={errorMessages[0]}
                   />
@@ -75,8 +71,8 @@ const Contact = ({ values, handleChange, errors, touched }) => {
                   onChange={props.handleChange}
                 />
                 {props.errors.email && (
-                  <Errors
-                    touched={props.touched.email}
+                  <Error
+                    touched={!!props.touched.email}
                     name={props.errors.email}
                     content={errorMessages[1]}
                   />
@@ -88,8 +84,8 @@ const Contact = ({ values, handleChange, errors, touched }) => {
                   onChange={props.handleChange}
                 />
                 {props.errors.message && (
-                  <Errors
-                    touched={props.touched.message}
+                  <Error
+                    touched={!!props.touched.message}
                     name={props.errors.message}
                     content={errorMessages[2]}
                   />
@@ -120,7 +116,7 @@ const Contact = ({ values, handleChange, errors, touched }) => {
                     </p>
                   </div>
                 ) : (
-                  ""
+                  ''
                 )}
               </Form>
             )}

@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./Footer.module.scss";
-import CV_PL from "../../assets/cv/CV(pl).pdf";
-import CV_ANG from "../../assets/cv/CV(ang).pdf";
-import socialsInfo from "../SocialLinks/socialInfo";
-import SocialLinks from "../SocialLinks/SocialLinks";
+import React from 'react';
+import styles from './Footer.module.scss';
+// import CV_PL from '../../assets/cv/CV(pl).pdf';
+// import CV_ANG from '../../assets/cv/CV(ang).pdf';
+import socialsInfo from '../SocialLinks/socialInfo';
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 const Footer = () => {
   return (
@@ -27,14 +27,14 @@ const Footer = () => {
 
           <div className={styles.buttonsContainer}>
             <a
-              href={CV_PL}
+              href={require('../../assets/cv/CV(pl).pdf')}
               download="DawidPolednik(CV-PL)"
               className={styles.ButtonCV}
             >
               CV PL
             </a>
             <a
-              href={CV_ANG}
+              href={require('../../assets/cv/CV(ang).pdf')}
               download="DawidPolednik(CV-ANG)"
               className={styles.ButtonCV}
             >

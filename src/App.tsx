@@ -1,26 +1,24 @@
-import React, { Component } from "react";
-import styles from "./App.module.scss";
-import { Link } from "react-scroll";
-import LandingPage from "./Components/LandingPage/LandingPage";
-import AboutMe from "./Components/AboutMe/AboutMe";
-import Education from "./Components/Education/Education";
-import Technologies from "./Components/Technologies/Technologies";
-import Projects from "./Components/Projects/Projects";
-import Contact from "./Components/Contact/Contact";
-import Footer from "./Components/Footer/Footer";
-
-import "./loader.js";
+import React, { Component } from 'react';
+import styles from './App.module.scss';
+import { Link } from 'react-scroll';
+import LandingPage from './Components/LandingPage/LandingPage';
+import AboutMe from './Components/AboutMe/AboutMe';
+import Education from './Components/Education/Education';
+import Technologies from './Components/Technologies/Technologies';
+import Projects from './Components/Projects/Projects';
+import Contact from './Components/Contact/Contact';
+import Footer from './Components/Footer/Footer';
 
 class App extends Component {
   state = {
     menuItems: [
-      { name: "Home", toNavigate: "home" },
-      { name: "O Mnie", toNavigate: "aboutMe" },
-      { name: "Edukacja", toNavigate: "education" },
-      { name: "Technologie", toNavigate: "technologies" },
-      { name: "Projekty", toNavigate: "projects" },
-      { name: "Kontakt", toNavigate: "contact" }
-    ]
+      { name: 'Home', toNavigate: 'home' },
+      { name: 'O Mnie', toNavigate: 'aboutMe' },
+      { name: 'Edukacja', toNavigate: 'education' },
+      { name: 'Technologie', toNavigate: 'technologies' },
+      { name: 'Projekty', toNavigate: 'projects' },
+      { name: 'Kontakt', toNavigate: 'contact' },
+    ],
   };
 
   getMenuList = () => {
@@ -41,8 +39,6 @@ class App extends Component {
               duration={1000}
               delay={250}
               isDynamic={true}
-              onSetActive={this.handleSetActive}
-              onSetInactive={this.handleSetInactive}
               ignoreCancelEvents={false}
             >
               {menuItem.name}

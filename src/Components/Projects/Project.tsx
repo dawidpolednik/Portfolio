@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./Projects.module.scss";
-import ScrollAnimation from "react-animate-on-scroll";
+import React from 'react';
+import styles from './Projects.module.scss';
+import ScrollAnimation from 'react-animate-on-scroll';
 
-const titleButtons = ["GitHub", "Live Demo"];
+const titleButtons = ['GitHub', 'Live Demo'];
 
 const Project = ({
   id,
@@ -11,7 +11,7 @@ const Project = ({
   description,
   tools,
   link,
-  liveDemo
+  liveDemo,
 }) => (
   <ScrollAnimation
     animateIn="fadeInDown"
@@ -19,14 +19,13 @@ const Project = ({
     duration={1}
     delay={100}
     animateOnce
-    animatePreScroll
   >
     <div className={styles.projectsItem}>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <div className={styles.imgContainer}>
           <img src={imageRef} className={styles.img} alt="projekt"></img>
           <div className={styles.searchIconContainer}>
-            <i className={`${styles.searchIcon} ${"fa fa-search-plus"}`}></i>
+            <i className={`${styles.searchIcon} ${'fa fa-search-plus'}`}></i>
           </div>
         </div>
       </a>
