@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './LandingPage.module.scss';
 import Picture from '../../img/polednik.jpg';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
-import { socialMedia } from '../SocialLinks/socialMedia';
-import SocialLinks from '../SocialLinks/SocialLinks';
+import { socialMediaData } from '../SocialMedia/data';
+import SocialMedia from '../SocialMedia/SocialMedia';
 
 const LandingPage = () => {
   return (
@@ -16,8 +16,8 @@ const LandingPage = () => {
         <h1 className={styles.bannerTitle}>Front End Developer</h1>
         <hr className={styles.bannerHR} />
         <div className={styles.socialLinks}>
-          {socialMedia.map(({ id, href, className }) => (
-            <SocialLinks key={id} href={href} className={className} />
+          {socialMediaData.map(({ id, href, className }) => (
+            <SocialMedia key={id} href={href} className={className} />
           ))}
         </div>
       </div>

@@ -4,11 +4,11 @@ interface SocialLinkProps {
   className: string;
 }
 
-const SocialLink: FC<SocialLinkProps> = ({ href, className }) => {
+const SocialMedia: FC<SocialLinkProps> = ({ href, className }) => {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
       <i className={`${className} `} aria-hidden="true"></i>
     </a>
   );
 };
-export default SocialLink;
+export default SocialMedia;

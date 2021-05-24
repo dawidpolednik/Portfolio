@@ -1,5 +1,5 @@
-@import "../../assets/fonts";
-@import "../../assets//styles/variables.scss";
+@import '../../assets/fonts';
+@import '../../assets//styles/variables.scss';
 
 .label {
   display: none;
@@ -85,8 +85,7 @@
             letter-spacing: 1px;
             font-size: 1rem;
             line-height: 1rem;
-            &:hover,
-            &:focus,
+            &:hover:not(&:focus),
             &:active {
               cursor: pointer;
             }
@@ -117,7 +116,7 @@
           }
           .effect ~ .focusBorder:before,
           .effect ~ .focusBorder:after {
-            content: "";
+            content: '';
             position: absolute;
             bottom: -15px;
             top: 0;
@@ -137,7 +136,7 @@
           }
           .effect ~ .focusBorder i:before,
           .effect ~ .focusBorder i:after {
-            content: "";
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
@@ -211,12 +210,18 @@
         height: 0;
         z-index: 70;
         transition: height 0.6s ease-out;
-        .confirmationMessage {
+        p {
           font-family: $thirdFont;
           line-height: 22px;
           color: rgb(37, 133, 50);
           font-size: 18px;
           padding-top: 20px;
+          &.confirmationMessage {
+            color: rgb(37, 133, 50);
+          }
+          &.errorMessage {
+            color: rgba(191, 63, 63, 1);
+          }
         }
       }
     }
@@ -296,7 +301,7 @@
           .col {
             float: left;
             width: 80%;
-            input[type="text"],
+            input[type='text'],
             select:focus,
             .effect:focus {
               font-size: 1rem;
@@ -329,7 +334,7 @@
   }
 }
 
-@include breakpoint-only("xs") {
+@include breakpoint-only('xs') {
   .container {
     .contactHeader {
       .contactTitle {
@@ -381,7 +386,7 @@
     }
   }
 }
-@include breakpoint-only("sm") {
+@include breakpoint-only('sm') {
   .container {
     .contactHeader {
       .contactTitle {
@@ -403,7 +408,7 @@
           .col {
             float: left;
             width: 80%;
-            input[type="text"],
+            input[type='text'],
             textarea,
             select:focus {
               font-size: 1rem;
@@ -435,7 +440,7 @@
     }
   }
 }
-@include breakpoint-only("md") {
+@include breakpoint-only('md') {
   .container {
     .contactHeader {
       .contactTitle {

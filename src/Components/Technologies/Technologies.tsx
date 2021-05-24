@@ -1,7 +1,7 @@
 import React, { FC, useMemo, useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import { technologiesLoader } from '../../images';
+import { technologiesLoader } from '../../mocks/fixtures';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './Technologies.module.scss';
 

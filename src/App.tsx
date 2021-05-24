@@ -9,6 +9,10 @@ import Footer from './Components/Footer/Footer';
 import LandingPage from './Components/LandingPage/LandingPage';
 import Projects from './Components/Projects/Projects';
 import { Technologies } from './Components/Technologies/Technologies';
+import { useTranslation } from 'react-i18next';
+import i18n from './i18n';
+
+type LanguageOptions = 'pl' | 'en';
 
 const menuItems: MenuItem[] = [
   { id: 1, name: 'Home', toNavigate: 'home' },
@@ -20,9 +24,12 @@ const menuItems: MenuItem[] = [
 ];
 
 const App: FC = () => {
+  const { t } = useTranslation();
+
   const renderNavbar = useMemo(
     () => (
       <nav className={`${styles.toolbar} ${styles.resetBlur}`}>
+        <p>{t('welcome')}</p>
         <ul className={styles.navigationList}>
           {menuItems.map(({ id, name, toNavigate }) => (
             <Link
@@ -47,6 +54,10 @@ const App: FC = () => {
     ),
     []
   );
+
+  const changeLanguage = (lng: LanguageOptions) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <>

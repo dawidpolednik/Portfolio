@@ -1,4 +1,4 @@
-export const socialMedia: SocialMedium[] = [
+export const socialMediaData: SocialMedium[] = [
   {
     id: 1,
     href: 'https://www.facebook.com/dawid.polednik',

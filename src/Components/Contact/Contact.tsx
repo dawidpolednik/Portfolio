@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Form, Formik } from 'formik';
+import { Form, Formik, FormikProps } from 'formik';
 import React, { FC } from 'react';
 import * as Yup from 'yup';
 
@@ -15,7 +15,15 @@ const errorMessages = [
   'To pole jest wymagane. Minimalna liczba znaków: 10',
 ];
 
+const SEND_DATA_URL = 'https://server-nodemailer.herokuapp.com/send';
+
 const Contact: FC = () => {
+  const initialValues: FormMailerValues = {
+    name: '',
+    email: '',
+    message: '',
+  };
+
   return (
     <section className={styles.container} id="contact">
       <div className={styles.contactHeader}>
@@ -24,7 +32,7 @@ const Contact: FC = () => {
       <div className={styles.contactBackground}>
         <div className={styles.contactSection}>
           <Formik
-            initialValues={{ name: '', email: '', message: '' }}
+            initialValues={initialValues}
             validationSchema={Yup.object().shape({
               name: Yup.string().min(5).required(),
               email: Yup.string().email().required(),
@@ -35,58 +43,55 @@ const Contact: FC = () => {
               { resetForm, setStatus, setErrors, setSubmitting }
             ) => {
               setStatus({ success: false });
-              const appURL = 'https://server-nodemailer.herokuapp.com/send';
               try {
-                axios({
-                  method: 'POST',
-                  url: appURL,
-                  data: {
-                    name: values.name,
-                    email: values.email,
-                    message: values.message,
-                  },
-                });
+                await axios.post<FormMailerValues>(SEND_DATA_URL, values);
                 resetForm();
                 setStatus({ success: 'Wiadomość została wysłana' });
-                setSubmitting(false);
               } catch (error) {
-                setStatus({ success: 'Coś poszło nie tak.' });
+                setStatus({ error: 'Błąd podczas wysyłania wiadomości...' });
+                setErrors(error);
+              } finally {
                 setSubmitting(false);
-                // setErrors({ submit: error.message });
               }
             }}
-            render={props => (
+            render={({
+              errors,
+              touched,
+              values,
+              handleChange,
+              status,
+            }: FormikProps<FormMailerValues>) => (
               <Form className={styles.contactForm}>
-                {props.errors.name && (
+                {errors.name && (
                   <Error
-                    touched={!!props.touched.name}
-                    name={props.errors.name}
+                    touched={!!touched.name}
+                    name={errors.name}
                     content={errorMessages[0]}
                   />
                 )}
                 <Input
                   name="name"
                   placeholder="Podaj imię i nazwisko"
-                  value={props.values.name}
-                  onChange={props.handleChange}
+                  value={values.name}
+                  onChange={handleChange}
                 />
-                {props.errors.email && (
+                {errors.email && (
                   <Error
-                    touched={!!props.touched.email}
-                    name={props.errors.email}
+                    touched={!!touched.email}
+                    name={errors.email}
                     content={errorMessages[1]}
                   />
                 )}
                 <Input
                   name="email"
                   placeholder="Wprowadź adres e-mail"
-                  value={props.values.email}
-                  onChange={props.handleChange}
+                  value={values.email}
+                  onChange={handleChange}
                 />
-                {props.errors.message && (
+                {errors.message && (
                   <Error
-                    touched={!!props.touched.message}
-                    name={props.errors.message}
+                    touched={!!touched.message}
+                    name={errors.message}
                     content={errorMessages[2]}
                   />
                 )}
@@ -94,8 +99,8 @@ const Contact: FC = () => {
                 <TextArea
                   name="message"
                   placeholder="Treść wiadomości..."
-                  value={props.values.message}
-                  onChange={props.handleChange}
+                  value={values.message}
+                  onChange={handleChange}
                 />
                 <div className={styles.buttonsContainer}>
                   <input
@@ -109,14 +114,17 @@ const Contact: FC = () => {
                     value="Wyślij"
                   />
                 </div>
-                {props.status ? (
+                {status && (
                   <div className={styles.confirmationContainer}>
-                    <p className={styles.confirmationMessage}>
-                      {props.status.success}
+                    <p
+                      className={
+                        (status.success && styles.confirmationMessage) ||
+                        (status.error && styles.errorMessage)
+                      }
+                    >
+                      {status.success ? status.success : status.error}
                     </p>
                   </div>
-                ) : (
-                  ''
                 )}
               </Form>
             )}

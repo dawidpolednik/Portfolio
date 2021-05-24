@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.scss';
-import { socialMedia } from '../SocialLinks/socialMedia';
-import SocialLinks from '../SocialLinks/SocialLinks';
+import { socialMediaData } from '../SocialMedia/data';
+import SocialLinks from '../SocialMedia/SocialMedia';
 
 const Footer = () => {
   return (
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.socialLinks}>
-          {socialMedia.map(({ id, href, className }) => (
+          {socialMediaData.map(({ id, href, className }) => (
             <SocialLinks key={id} href={href} className={className} />
           ))}
         </div>

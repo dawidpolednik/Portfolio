@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 
-import { projectsLoader } from '../../images';
+import { projectsLoader } from '../../mocks/fixtures';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import Project from './Project';
 import styles from './Projects.module.scss';
