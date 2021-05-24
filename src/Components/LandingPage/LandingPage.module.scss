@@ -1,5 +1,6 @@
-@import "../../assets/fonts";
-@import "../../assets/styles/variables.scss";
+@import '../../assets/fonts';
+@import '../../assets/styles/variables.scss';
+
 .landingGrid {
   display: flex;
   flex-direction: column;
@@ -150,7 +151,7 @@
   }
 }
 
-@include breakpoint-only("xs") {
+@include breakpoint-only('xs') {
   .landingGrid {
     .imgContainer {
       width: 380px;
@@ -189,7 +190,7 @@
   }
 }
 
-@include breakpoint-only("sm") {
+@include breakpoint-only('sm') {
   .landingGrid {
     .imgContainer {
       width: 400px;
@@ -227,7 +228,7 @@
     }
   }
 }
-@include breakpoint-only("md") {
+@include breakpoint-only('md') {
   .landingGrid {
     .imgContainer {
       width: 500px;

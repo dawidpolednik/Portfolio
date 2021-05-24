@@ -1,5 +1,12 @@
 export const plMessages = {
   translations: {
-    welcome: 'witajcie',
+    menuOptions: {
+      home: 'Home',
+      aboutMe: 'O Mnie',
+      education: 'Edukacja',
+      technologies: 'Technologie',
+      projects: 'Projekty',
+      contact: 'Kontakt',
+    },
   },
 };

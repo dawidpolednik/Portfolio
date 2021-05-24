@@ -1,4 +1,5 @@
 import React, { FC, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-scroll';
 
 import styles from './App.module.scss';
@@ -7,29 +8,33 @@ import Contact from './Components/Contact/Contact';
 import Education from './Components/Education/Education';
 import Footer from './Components/Footer/Footer';
 import LandingPage from './Components/LandingPage/LandingPage';
+import { LanguageSwitcher } from './Components/LanguageSwitcher/LanguageSwitcher';
 import Projects from './Components/Projects/Projects';
 import { Technologies } from './Components/Technologies/Technologies';
-import { useTranslation } from 'react-i18next';
 import i18n from './i18n';
 
-type LanguageOptions = 'pl' | 'en';
-
-const menuItems: MenuItem[] = [
-  { id: 1, name: 'Home', toNavigate: 'home' },
-  { id: 2, name: 'O Mnie', toNavigate: 'aboutMe' },
-  { id: 3, name: 'Edukacja', toNavigate: 'education' },
-  { id: 4, name: 'Technologie', toNavigate: 'technologies' },
-  { id: 5, name: 'Projekty', toNavigate: 'projects' },
-  { id: 6, name: 'Kontakt', toNavigate: 'contact' },
-];
+export type LanguageOptions = 'pl' | 'en';
 
 const App: FC = () => {
   const { t } = useTranslation();
 
+  const handleChangeLanguage = (lng: LanguageOptions) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const menuItems: MenuItem[] = [
+    { id: 1, name: t('menuOptions.home'), toNavigate: 'home' },
+    { id: 2, name: t('menuOptions.aboutMe'), toNavigate: 'aboutMe' },
+    { id: 3, name: t('menuOptions.aboutMe'), toNavigate: 'education' },
+    { id: 4, name: t('menuOptions.education'), toNavigate: 'technologies' },
+    { id: 5, name: t('menuOptions.projects'), toNavigate: 'projects' },
+    { id: 6, name: t('menuOptions.contact'), toNavigate: 'contact' },
+  ];
+
   const renderNavbar = useMemo(
     () => (
       <nav className={`${styles.toolbar} ${styles.resetBlur}`}>
-        <p>{t('welcome')}</p>
+        <LanguageSwitcher changeLanguage={handleChangeLanguage} />
         <ul className={styles.navigationList}>
           {menuItems.map(({ id, name, toNavigate }) => (
             <Link
@@ -52,12 +57,8 @@ const App: FC = () => {
         </ul>
       </nav>
     ),
-    []
+    [menuItems]
   );
-
-  const changeLanguage = (lng: LanguageOptions) => {
-    i18n.changeLanguage(lng);
-  };
 
   return (
     <>

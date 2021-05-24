@@ -11,7 +11,6 @@ const resources = {
 i18n.use(initReactI18next).init({
   lng: 'en',
   resources,
-  keySeparator: false,
   debug: false,
   ns: ['translations'],
   defaultNS: 'translations',
