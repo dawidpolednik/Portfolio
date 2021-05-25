@@ -67,8 +67,8 @@ const App: FC = () => {
   return (
     <>
       <div className={styles.bgImage}>
-        <HamburgerMenu isOpen={isMenuOpen} handleOpen={setIsMenuOpen} />
-        <Menu isOpen={isMenuOpen} handleOpen={setIsMenuOpen} />
+        <HamburgerMenu isOpen={isMenuOpen} onOpen={() => setIsMenuOpen(true)} />
+        <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         {/* {renderNavbar} */}
         <div className={styles.container}>
           <LandingPage />

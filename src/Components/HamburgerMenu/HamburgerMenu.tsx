@@ -3,19 +3,13 @@ import styles from './HamburgerMenu.module.scss';
 
 interface HamburgerMenuProps {
   isOpen: boolean;
-  handleOpen: (isOpen: boolean) => void;
+  onOpen: () => void;
 }
 
-export const HamburgerMenu: FC<HamburgerMenuProps> = ({
-  isOpen,
-  handleOpen,
-}) => {
+export const HamburgerMenu: FC<HamburgerMenuProps> = ({ isOpen, onOpen }) => {
   return (
     !isOpen && (
-      <section
-        className={styles.hamburgerWrapper}
-        onClick={() => handleOpen(true)}
-      >
+      <section className={styles.hamburgerWrapper} onClick={onOpen}>
         <div className={styles.linesWrapper}>
           <div className={styles.lineItem} />
           <div className={styles.lineItem} />
