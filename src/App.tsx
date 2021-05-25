@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-scroll';
 
@@ -7,8 +7,10 @@ import AboutMe from './Components/AboutMe/AboutMe';
 import Contact from './Components/Contact/Contact';
 import Education from './Components/Education/Education';
 import Footer from './Components/Footer/Footer';
+import { HamburgerMenu } from './Components/HamburgerMenu/HamburgerMenu';
 import LandingPage from './Components/LandingPage/LandingPage';
 import { LanguageSwitcher } from './Components/LanguageSwitcher/LanguageSwitcher';
+import { Menu } from './Components/Menu/Menu';
 import Projects from './Components/Projects/Projects';
 import { Technologies } from './Components/Technologies/Technologies';
 import i18n from './i18n';
@@ -17,6 +19,8 @@ export type LanguageOptions = 'pl' | 'en';
 
 const App: FC = () => {
   const { t } = useTranslation();
+
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const handleChangeLanguage = (lng: LanguageOptions) => {
     i18n.changeLanguage(lng);
@@ -63,7 +67,9 @@ const App: FC = () => {
   return (
     <>
       <div className={styles.bgImage}>
-        {renderNavbar}
+        <HamburgerMenu isOpen={isMenuOpen} handleOpen={setIsMenuOpen} />
+        <Menu isOpen={isMenuOpen} handleOpen={setIsMenuOpen} />
+        {/* {renderNavbar} */}
         <div className={styles.container}>
           <LandingPage />
         </div>

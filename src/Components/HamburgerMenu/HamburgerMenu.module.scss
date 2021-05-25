@@ -1,0 +1,42 @@
+@import '../../assets/fonts';
+@import '../../assets/styles/variables.scss';
+
+@mixin line {
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.hamburgerWrapper {
+  position: absolute;
+  top: 40px;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 6px;
+  height: 46px;
+  width: 46px;
+  background-color: #202630;
+  cursor: pointer;
+}
+
+.linesWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 5px;
+}
+
+.lineItem {
+  @include line;
+  width: 18px;
+}
+
+.lineItemShorted {
+  @include line;
+  width: 14px;
+}
