@@ -7,6 +7,33 @@
   border-radius: 10px;
 }
 
+@keyframes hamburgerHover {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.lineItem {
+  @include line;
+  width: 18px;
+}
+
+.lineItemShorter {
+  @include line;
+  width: 15px;
+}
+
+.lineItemShortest {
+  @include line;
+  width: 12px;
+}
+
 .hamburgerWrapper {
   position: absolute;
   top: 40px;
@@ -21,6 +48,23 @@
   width: 46px;
   background-color: #202630;
   cursor: pointer;
+
+  &:hover {
+    div {
+      width: 18px;
+    }
+    .lineItem {
+      animation: hamburgerHover 1s infinite ease-in-out;
+    }
+
+    .lineItemShorter {
+      animation: hamburgerHover 1s infinite ease-in-out forwards 200ms;
+    }
+
+    .lineItemShortest {
+      animation: hamburgerHover 1s infinite ease-in-out forwards 400ms;
+    }
+  }
 }
 
 .linesWrapper {
@@ -29,14 +73,4 @@
   justify-content: center;
   align-items: flex-start;
   row-gap: 5px;
-}
-
-.lineItem {
-  @include line;
-  width: 18px;
-}
-
-.lineItemShorted {
-  @include line;
-  width: 14px;
 }

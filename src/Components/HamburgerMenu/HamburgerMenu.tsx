@@ -12,8 +12,8 @@ export const HamburgerMenu: FC<HamburgerMenuProps> = ({ isOpen, onOpen }) => {
       <section className={styles.hamburgerWrapper} onClick={onOpen}>
         <div className={styles.linesWrapper}>
           <div className={styles.lineItem} />
-          <div className={styles.lineItem} />
-          <div className={styles.lineItemShorted} />
+          <div className={styles.lineItemShorter} />
+          <div className={styles.lineItemShortest} />
         </div>
       </section>
     )

@@ -1,6 +1,5 @@
 import React, { FC, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-scroll';
 
 import styles from './App.module.scss';
 import AboutMe from './Components/AboutMe/AboutMe';
@@ -23,6 +22,7 @@ const App: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const handleChangeLanguage = (lng: LanguageOptions) => {
+    console.log('lng :>> ', lng);
     i18n.changeLanguage(lng);
   };
 

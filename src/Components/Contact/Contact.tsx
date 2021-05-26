@@ -2,18 +2,12 @@ import axios from 'axios';
 import { Form, Formik, FormikProps } from 'formik';
 import React, { FC } from 'react';
 import * as Yup from 'yup';
-
+import { useTranslation } from 'react-i18next';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './Contact.module.scss';
 import { Error } from './Errors';
 import Input from './Input';
 import TextArea from './TextArea';
-
-const errorMessages = [
-  'To pole jest wymagane. Minimalna liczba znaków: 5',
-  'Podany adres E-mail jest nieprawidłowy',
-  'To pole jest wymagane. Minimalna liczba znaków: 10',
-];
 
 const SEND_DATA_URL = 'https://server-nodemailer.herokuapp.com/send';
 
@@ -24,10 +18,12 @@ const Contact: FC = () => {
     message: '',
   };
 
+  const { t } = useTranslation();
+
   return (
     <section className={styles.container} id="contact">
       <div className={styles.contactHeader}>
-        <h2 className={styles.contactTitle}>Kontakt</h2>
+        <h2 className={styles.contactTitle}>{t('contactSection.header')}</h2>
       </div>
       <div className={styles.contactBackground}>
         <div className={styles.contactSection}>
@@ -46,9 +42,11 @@ const Contact: FC = () => {
               try {
                 await axios.post<FormMailerValues>(SEND_DATA_URL, values);
                 resetForm();
-                setStatus({ success: 'Wiadomość została wysłana' });
+                setStatus({ success: t('contactSection.requestResolved') });
               } catch (error) {
-                setStatus({ error: 'Błąd podczas wysyłania wiadomości...' });
+                setStatus({
+                  error: t('contactSection.errorMessages.requestRejected'),
+                });
                 setErrors(error);
               } finally {
                 setSubmitting(false);
@@ -66,12 +64,12 @@ const Contact: FC = () => {
                   <Error
                     touched={!!touched.name}
                     name={errors.name}
-                    content={errorMessages[0]}
+                    content={t('contactSection.errorMessages.name')}
                   />
                 )}
                 <Input
                   name="name"
-                  placeholder="Podaj imię i nazwisko"
+                  placeholder={t('contactSection.placeholders.name')}
                   value={values.name}
                   onChange={handleChange}
                 />
@@ -79,12 +77,12 @@ const Contact: FC = () => {
                   <Error
                     touched={!!touched.email}
                     name={errors.email}
-                    content={errorMessages[1]}
+                    content={t('contactSection.errorMessages.email')}
                   />
                 )}
                 <Input
                   name="email"
-                  placeholder="Wprowadź adres e-mail"
+                  placeholder={t('contactSection.placeholders.email')}
                   value={values.email}
                   onChange={handleChange}
                 />
@@ -92,13 +90,13 @@ const Contact: FC = () => {
                   <Error
                     touched={!!touched.message}
                     name={errors.message}
-                    content={errorMessages[2]}
+                    content={t('contactSection.errorMessages.message')}
                   />
                 )}
 
                 <TextArea
                   name="message"
-                  placeholder="Treść wiadomości..."
+                  placeholder={t('contactSection.placeholders.message')}
                   value={values.message}
                   onChange={handleChange}
                 />
@@ -106,12 +104,12 @@ const Contact: FC = () => {
                   <input
                     className={styles.formButton}
                     type="reset"
-                    value="Wyczyść formularz"
+                    value={`${t('contactSection.buttons.reset')}`}
                   />
                   <input
                     className={styles.formButton}
                     type="submit"
-                    value="Wyślij"
+                    value={`${t('contactSection.buttons.submit')}`}
                   />
                 </div>
                 {status && (

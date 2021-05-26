@@ -1,12 +1,14 @@
 import React, { FC, useMemo, useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
-
+import { useTranslation } from 'react-i18next';
 import { technologiesLoader } from '../../mocks/fixtures';
 import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
 import styles from './Technologies.module.scss';
 
 export const Technologies: FC = () => {
   const [images] = useState(technologiesLoader());
+
+  const { t } = useTranslation();
 
   const renderTechnologiesSection = useMemo(
     () =>
@@ -32,7 +34,9 @@ export const Technologies: FC = () => {
   return (
     <section className={styles.container} id="technologies">
       <div className={styles.technologiesHeader}>
-        <h2 className={styles.technologiesTitle}>Wykorzystywane Technologie</h2>
+        <h2 className={styles.technologiesTitle}>
+          {t('technologiesSection.header')}
+        </h2>
       </div>
       <div className={styles.technologiesBackground}>
         <div className={styles.technologiesSection}>

@@ -2,17 +2,20 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import { socialMediaData } from '../SocialMedia/data';
 import SocialLinks from '../SocialMedia/SocialMedia';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className={styles.container}>
       <div className={styles.contentWidth}>
         <div className={styles.infoContainer}>
-          <h4 className={styles.contactTitle}>Kontakt</h4>
+          <h4 className={styles.contactTitle}>{t('footerSection.contact')}</h4>
           <div className={styles.phoneContainer}>
             <p className={styles.contactContent}>
               <i className="fa fa-phone"></i>
-              &nbsp;&nbsp;&nbsp; Telefon: +48 530 921 475
+              &nbsp;&nbsp;&nbsp; {t('footerSection.phone')}: +48 530 921 475
             </p>
           </div>
 
