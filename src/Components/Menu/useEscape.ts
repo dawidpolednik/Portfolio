@@ -10,5 +10,5 @@ export const useEscape = (onEscape: () => void) => {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
-  }, []);
+  }, [onEscape]);
 };

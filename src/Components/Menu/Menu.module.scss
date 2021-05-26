@@ -1,3 +1,6 @@
+@import '../../assets/fonts';
+@import '../../assets/styles/variables.scss';
+
 .wrapper {
   position: fixed;
   top: 0;
@@ -5,11 +8,8 @@
   right: 0;
   bottom: 0;
   width: 100%;
-  // height: 100vh;
   z-index: 100;
-  background-color: rgba(22, 26, 30, 0.9);
-
-  // height: 100%;
+  background-color: rgba(22, 26, 30, 0.98);
   overflow: hidden;
 }
 .contentWrapper {
@@ -17,15 +17,50 @@
   width: 100%;
   height: 100%;
   margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .closeIconWrapper {
   position: absolute;
   top: 0;
-  right: 70px;
+  right: 25%;
   color: white;
   cursor: pointer;
+  transition: 0.4s;
+  &:hover {
+    transform: scale(1.2);
+  }
   svg path {
     fill: white;
+  }
+}
+
+.menuWrapper {
+  margin-top: 140px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  row-gap: 60px;
+}
+
+.menuItem {
+  font-size: 35px;
+  color: #fff;
+  font-family: $thirdFont;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.4;
   }
 }

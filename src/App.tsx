@@ -26,47 +26,10 @@ const App: FC = () => {
     i18n.changeLanguage(lng);
   };
 
-  const menuItems: MenuItem[] = [
-    { id: 1, name: t('menuOptions.home'), toNavigate: 'home' },
-    { id: 2, name: t('menuOptions.aboutMe'), toNavigate: 'aboutMe' },
-    { id: 3, name: t('menuOptions.aboutMe'), toNavigate: 'education' },
-    { id: 4, name: t('menuOptions.education'), toNavigate: 'technologies' },
-    { id: 5, name: t('menuOptions.projects'), toNavigate: 'projects' },
-    { id: 6, name: t('menuOptions.contact'), toNavigate: 'contact' },
-  ];
-
-  const renderNavbar = useMemo(
-    () => (
-      <nav className={`${styles.toolbar} ${styles.resetBlur}`}>
-        <LanguageSwitcher changeLanguage={handleChangeLanguage} />
-        <ul className={styles.navigationList}>
-          {menuItems.map(({ id, name, toNavigate }) => (
-            <Link
-              key={id}
-              className={styles.navigationItem}
-              activeClass="active"
-              to={toNavigate}
-              spy={true}
-              smooth={true}
-              hashSpy={true}
-              offset={0}
-              duration={1000}
-              delay={250}
-              isDynamic={true}
-              ignoreCancelEvents={false}
-            >
-              {name}
-            </Link>
-          ))}
-        </ul>
-      </nav>
-    ),
-    [menuItems]
-  );
-
   return (
     <>
       <div className={styles.bgImage}>
+        <LanguageSwitcher changeLanguage={handleChangeLanguage} />
         <HamburgerMenu isOpen={isMenuOpen} onOpen={() => setIsMenuOpen(true)} />
         <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         {/* {renderNavbar} */}

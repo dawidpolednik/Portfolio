@@ -4,4 +4,9 @@
 
 .wrapper {
   display: flex;
+  column-gap: 5px;
+}
+
+.languagePicker {
+  cursor: pointer;
 }

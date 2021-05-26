@@ -10,8 +10,12 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
   changeLanguage,
 }) => (
   <div className={styles.wrapper}>
-    <p onClick={() => changeLanguage('pl')}>PL</p>
+    <p className={styles.languagePicker} onClick={() => changeLanguage('pl')}>
+      PL
+    </p>
     <p>/</p>
-    <p onClick={() => changeLanguage('en')}>EN</p>
+    <p className={styles.languagePicker} onClick={() => changeLanguage('en')}>
+      EN
+    </p>
   </div>
 );
