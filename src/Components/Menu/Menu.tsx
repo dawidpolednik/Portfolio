@@ -1,10 +1,11 @@
-import React, { FC, useEffect, useMemo, useRef } from 'react';
+import React, { FC, useEffect, useMemo, useRef, useCallback } from 'react';
 import styles from './Menu.module.scss';
 import { CloseIcon } from './CloseIcon';
 import ReactDOM from 'react-dom';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-scroll';
+
 interface MenuProps {
   onClose: () => void;
   isOpen: boolean;
@@ -19,7 +20,11 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     { id: 1, name: t('menuOptions.home'), toNavigate: 'home' },
     { id: 2, name: t('menuOptions.aboutMe'), toNavigate: 'aboutMe' },
     { id: 3, name: t('menuOptions.education'), toNavigate: 'education' },
-    { id: 4, name: t('menuOptions.technologies'), toNavigate: 'technologies' },
+    {
+      id: 4,
+      name: t('menuOptions.technologies'),
+      toNavigate: 'technologies',
+    },
     { id: 5, name: t('menuOptions.projects'), toNavigate: 'projects' },
     { id: 6, name: t('menuOptions.contact'), toNavigate: 'contact' },
   ];
@@ -28,10 +33,10 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     if (isOpen) disableBodyScroll(menuRef.current);
   }, [isOpen]);
 
-  const handleOnClose = () => {
+  const handleOnClose = useCallback(() => {
     onClose();
     enableBodyScroll(menuRef.current);
-  };
+  }, [onClose]);
 
   const renderMenu = useMemo(
     () => (
@@ -40,6 +45,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
           {menuItems.map(({ id, name, toNavigate }) => (
             <li key={id}>
               <Link
+                key={id}
                 className={styles.menuItem}
                 activeClass="active"
                 to={toNavigate}
@@ -60,7 +66,7 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
         </ul>
       </nav>
     ),
-    []
+    [menuItems, handleOnClose]
   );
 
   if (!isOpen) return null;

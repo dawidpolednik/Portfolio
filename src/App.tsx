@@ -17,12 +17,9 @@ import i18n from './i18n';
 export type LanguageOptions = 'pl' | 'en';
 
 const App: FC = () => {
-  const { t } = useTranslation();
-
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const handleChangeLanguage = (lng: LanguageOptions) => {
-    console.log('lng :>> ', lng);
     i18n.changeLanguage(lng);
   };
 
@@ -32,7 +29,6 @@ const App: FC = () => {
         <LanguageSwitcher changeLanguage={handleChangeLanguage} />
         <HamburgerMenu isOpen={isMenuOpen} onOpen={() => setIsMenuOpen(true)} />
         <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-        {/* {renderNavbar} */}
         <div className={styles.container}>
           <LandingPage />
         </div>
