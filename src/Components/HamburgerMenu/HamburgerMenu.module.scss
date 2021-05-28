@@ -36,8 +36,8 @@
 
 .hamburgerWrapper {
   position: absolute;
-  top: 40px;
-  right: 100px;
+  top: 5%;
+  right: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,4 +73,22 @@
   justify-content: center;
   align-items: flex-start;
   row-gap: 5px;
+}
+
+@media screen and (max-width: 414px) {
+  .hamburgerWrapper {
+    right: 10%;
+  }
+}
+
+@include breakpoint-only('xs') {
+  .hamburgerWrapper {
+    right: 12%;
+  }
+}
+
+@include breakpoint-only('md') {
+  .hamburgerWrapper {
+    right: 8%;
+  }
 }

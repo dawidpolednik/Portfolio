@@ -66,7 +66,7 @@
 
 @media screen and (max-width: 414px) {
   .menuWrapper {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
   .menuList {
@@ -74,7 +74,7 @@
   }
 
   .menuItem {
-    font-size: 18px;
+    font-size: 23px;
   }
 
   .closeIconWrapper {
@@ -146,6 +146,30 @@
     svg {
       width: 50px;
       height: 50px;
+    }
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 1280px) and (orientation: portrait) {
+  .contentWrapper {
+    margin-top: 20px;
+  }
+  .menuWrapper {
+    margin-top: 20px;
+  }
+
+  .menuList {
+    row-gap: 16px;
+  }
+
+  .menuItem {
+    font-size: 13px;
+  }
+
+  .closeIconWrapper {
+    svg {
+      width: 35px;
+      height: 35px;
     }
   }
 }
@@ -223,12 +247,16 @@
 }
 
 @media (max-width: 1370px) and (min-width: 1024px) and (orientation: landscape) {
+  .contentWrapper {
+    margin-top: 30px;
+  }
+
   .menuWrapper {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
   .menuList {
-    row-gap: 60px;
+    row-gap: 50px;
   }
 
   .menuItem {
@@ -237,13 +265,13 @@
 
   .closeIconWrapper {
     svg {
-      width: 70px;
-      height: 70px;
+      width: 50px;
+      height: 50px;
     }
   }
 }
 
-@media (max-width: 1400px) and (min-width: 1025px) and (orientation: landscape) {
+@media (max-width: 1400px) and (min-width: 1371px) and (orientation: landscape) {
   .menuWrapper {
     margin-top: 40px;
   }

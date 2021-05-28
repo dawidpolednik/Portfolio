@@ -1,7 +1,6 @@
 import React, { FC, useMemo } from 'react';
 import { LanguageOptions } from '../../App';
 import styles from './LanguageSwitcher.module.scss';
-// import i18n from '../../i18n';
 import { useTranslation } from 'react-i18next';
 interface LanguageSwitcherProps {
   changeLanguage: (lng: LanguageOptions) => void;
@@ -14,31 +13,25 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
 
   const currentLanguage = useMemo(() => i18n.language, [i18n.language]);
 
-  const isActivePL = useMemo(
-    () => currentLanguage === 'pl' && styles.active,
-    [currentLanguage]
-  );
-
-  const isActiveEN = useMemo(
-    () => currentLanguage === 'en' && styles.active,
-    [currentLanguage]
-  );
-
-  return (
+  const renderToggleField = (
     <div className={styles.wrapper}>
-      <p
-        className={`${styles.languagePicker} ${isActivePL}`}
-        onClick={() => changeLanguage('pl')}
-      >
-        PL
-      </p>
-      <p>/</p>
-      <p
-        className={`${styles.languagePicker} ${isActiveEN}`}
-        onClick={() => changeLanguage('en')}
-      >
-        EN
-      </p>
+      <label className={styles.toggleWrapper} htmlFor="checkbox">
+        <input
+          id="checkbox"
+          type="checkbox"
+          checked={currentLanguage === 'en'}
+          onChange={() =>
+            changeLanguage(currentLanguage === 'pl' ? 'en' : 'pl')
+          }
+          className={styles.hiddenInput}
+        />
+        <span className={styles.slider}></span>
+      </label>
+      <div className={styles.activeLanguageLabel}>
+        {currentLanguage.toUpperCase()}
+      </div>
     </div>
   );
+
+  return <div className={styles.wrapper}>{renderToggleField}</div>;
 };
