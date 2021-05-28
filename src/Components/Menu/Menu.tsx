@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useMemo, useRef, useCallback } from 'react';
 import styles from './Menu.module.scss';
-import { CloseIcon } from './CloseIcon';
+import { CloseIcon } from './CloseIcon/CloseIcon';
 import ReactDOM from 'react-dom';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { useTranslation } from 'react-i18next';
