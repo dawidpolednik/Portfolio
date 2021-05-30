@@ -63,9 +63,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(16px);
-  -ms-transform: translateX(16px);
-  transform: translateX(16px);
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
 }
 
 .activeLanguageLabel {
@@ -74,4 +74,35 @@ input:checked + .slider:before {
   color: #fff;
   padding-left: 10px;
   font-family: $secondFont;
+}
+
+@media screen and (max-width: 414px) and (max-aspect-ratio: 13/9) {
+  .wrapper {
+    top: 7%;
+    left: 7%;
+  }
+
+  .toggleWrapper {
+    width: 34px;
+    height: 18px;
+  }
+
+  .slider {
+    &:before {
+      height: 15px;
+      width: 15px;
+      bottom: 2px;
+      left: 2px;
+    }
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+  }
+
+  .activeLanguageLabel {
+    font-size: 15px;
+  }
 }

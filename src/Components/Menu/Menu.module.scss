@@ -1,6 +1,23 @@
 @import '../../assets/fonts';
 @import '../../assets/styles/variables.scss';
 
+@keyframes onRenderMenuItem {
+  0% {
+    opacity: 0;
+    pxtransform: translateY(150px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(120px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+  }
+}
+
 .wrapper {
   position: fixed;
   top: 0;
@@ -50,16 +67,23 @@
   justify-content: center;
   list-style-type: none;
   row-gap: 60px;
+  :nth-child(n) {
+    animation: onRenderMenuItem 1s none ease-in-out;
+  }
 }
 
-.menuItem {
+.menuItem:hover {
+  color: red;
+  opacity: 0.4;
+}
+
+.menuItemContent {
   font-size: 35px;
   color: #fff;
   font-family: $thirdFont;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
-  &:hover {
+  :hover {
     opacity: 0.4;
   }
 }

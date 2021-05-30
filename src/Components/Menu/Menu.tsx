@@ -42,27 +42,29 @@ export const Menu: FC<MenuProps> = ({ isOpen, onClose }) => {
     () => (
       <nav className={`${styles.menuWrapper} ${styles.resetBlur}`}>
         <ul className={styles.menuList}>
-          {menuItems.map(({ id, name, toNavigate }) => (
-            <li key={id}>
-              <Link
-                key={id}
-                className={styles.menuItem}
-                activeClass="active"
-                to={toNavigate}
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={0}
-                duration={1000}
-                delay={250}
-                isDynamic={true}
-                ignoreCancelEvents={false}
-                onClick={handleOnClose}
-              >
-                {name}
-              </Link>
-            </li>
-          ))}
+          {menuItems.map(({ id, name, toNavigate }, index) => {
+            return (
+              <li key={id} className={styles.menuItem}>
+                <Link
+                  key={id}
+                  className={styles.menuItemContent}
+                  activeClass="active"
+                  to={toNavigate}
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={0}
+                  duration={1000}
+                  delay={250}
+                  isDynamic={true}
+                  ignoreCancelEvents={false}
+                  onClick={handleOnClose}
+                >
+                  {name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     ),

@@ -22,7 +22,7 @@ const Input: FC<InputProps> = ({ name, placeholder, value, onChange }) => {
           onChange={onChange}
         />
         <span className={style.focusBorder}>
-          <i></i>
+          <i />
         </span>
       </div>
     </>

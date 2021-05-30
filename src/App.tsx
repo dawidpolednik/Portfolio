@@ -1,6 +1,4 @@
-import React, { FC, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-
+import React, { FC, useState } from 'react';
 import styles from './App.module.scss';
 import AboutMe from './Components/AboutMe/AboutMe';
 import Contact from './Components/Contact/Contact';
