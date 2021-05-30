@@ -88,7 +88,7 @@
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 414px) and (max-aspect-ratio: 13/9) {
   .menuWrapper {
     margin-top: 30px;
   }
