@@ -66,17 +66,12 @@
   align-items: center;
   justify-content: center;
   list-style-type: none;
-  :nth-child(n) {
-    margin-bottom: 60px;
-    animation: onRenderMenuItem 1s none ease-in-out;
-  }
 }
 
-.menuItem:hover {
-  color: red;
-  opacity: 0.4;
+.menuItem {
+  animation: onRenderMenuItem 1s none ease-in-out;
+  margin-bottom: 60px;
 }
-
 .menuItemContent {
   font-size: 35px;
   color: #fff;
