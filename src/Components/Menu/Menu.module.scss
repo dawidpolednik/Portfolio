@@ -71,16 +71,16 @@
 .menuItem {
   animation: onRenderMenuItem 1s none ease-in-out;
   margin-bottom: 60px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.4;
+  }
 }
 .menuItemContent {
   font-size: 35px;
   color: #fff;
   font-family: $thirdFont;
   font-weight: 600;
-  cursor: pointer;
-  :hover {
-    opacity: 0.4;
-  }
 }
 
 @media screen and (max-width: 414px) and (min-width: 240px) and (max-aspect-ratio: 13/9) {
