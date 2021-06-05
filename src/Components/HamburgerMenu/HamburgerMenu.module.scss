@@ -51,7 +51,8 @@
   background-color: #202630;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:active {
     div {
       width: 18px;
     }

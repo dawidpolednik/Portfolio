@@ -4,12 +4,21 @@
 @keyframes onRenderMenuItem {
   0% {
     opacity: 0;
-    pxtransform: translateY(150px);
+    transform: translateY(100px);
   }
+  // 20% {
+  //   opacity: 0.5;
+  //   transform: translateY(70px);
+  // }
+
   50% {
-    opacity: 0.5;
-    transform: translateY(120px);
+    // opacity: 0.5;
+    transform: translateY(10px);
   }
+
+  // 70% {
+  //   opacity: 0.7;
+  // }
 
   100% {
     opacity: 1;
@@ -69,7 +78,7 @@
 }
 
 .menuItem {
-  animation: onRenderMenuItem 1s none ease-in-out;
+  animation: onRenderMenuItem 1.5s forwards ease-in-out;
   margin-bottom: 60px;
   cursor: pointer;
   &:hover {
