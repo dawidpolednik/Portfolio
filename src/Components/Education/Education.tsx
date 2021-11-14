@@ -17,24 +17,30 @@ const Education = () => {
     },
     {
       id: 1,
+      date: t('educationSection.lifeEvents.firstWork.time'),
+      title: t('educationSection.lifeEvents.firstWork.header'),
+      description: t('educationSection.lifeEvents.firstWork.description'),
+    },
+    {
+      id: 2,
       date: t('educationSection.lifeEvents.masterDegree.time'),
       title: t('educationSection.lifeEvents.masterDegree.header'),
       description: t('educationSection.lifeEvents.masterDegree.description'),
     },
     {
-      id: 2,
+      id: 3,
       date: t('educationSection.lifeEvents.internship.time'),
       title: t('educationSection.lifeEvents.internship.header'),
       description: t('educationSection.lifeEvents.internship.description'),
     },
     {
-      id: 3,
+      id: 4,
       date: t('educationSection.lifeEvents.academy.time'),
       title: t('educationSection.lifeEvents.academy.header'),
       description: t('educationSection.lifeEvents.academy.description'),
     },
     {
-      id: 4,
+      id: 5,
       date: t('educationSection.lifeEvents.engineer.time'),
       title: t('educationSection.lifeEvents.engineer.header'),
       description: t('educationSection.lifeEvents.engineer.description'),
