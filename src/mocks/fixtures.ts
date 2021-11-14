@@ -43,7 +43,7 @@ const technologies: Technology[] = [
   {
     id: 9,
     image: require('../img/8.svg'),
-    title: 'Sass(SCSS)',
+    title: 'Sass(SCSS/LESS)',
   },
   {
     id: 10,
@@ -84,6 +84,16 @@ const technologies: Technology[] = [
     id: 17,
     image: require('../img/webpack.png'),
     title: 'Webpack',
+  },
+  {
+    id: 18,
+    image: require('../img/jest.png'),
+    title: 'Jest',
+  },
+  {
+    id: 19,
+    image: require('../img/enzyme.png'),
+    title: 'Enzyme',
   },
 ];
 export const technologiesLoader = () => technologies;

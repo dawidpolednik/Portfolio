@@ -12,23 +12,29 @@ export const enMessages = {
       header: 'About me.',
       subHeader: 'Who am I?',
       firstParagraph:
-        'My name is Dawid Polednik, I am a Front-End Developer from a small town near Racibórz. I have been creating websites for over a year.',
+        'My name is Dawid Polednik, I am a Front-End Developer from a small town near Racibórz. I have been creating websites for over two and half year.',
       secondParagraph:
-        'I have a year and a half of practical experience in programming web / mobile applications using HTML5, CSS3 and JavaScript using React / React Native libraries.',
+        'I have a two years of practical experience in programming web applications using HTML5, CSS3 and JavaScript using React.',
       thirdParagraph:
         'I am a person who focuses on continuous development, so I do not close myself to other technologies.',
       fourthParagraph:
         'I am a graduate of 2nd degree studies in Computer Science at the Faculty of Automatic Control, Electronics and Computer Science of the Silesian University of Technology.',
       fifthParagraph:
-        'I am currently working as a Front-End Developer at Pirios S.A. located in Krakow.',
+        'I am currently working as a Front-End Developer at j-labs located in Krakow.',
       sixthParagraph:
-        'Apart from my passion for internet programming, I am interested in powerlifting and football.',
+        'Apart from my passion for web programming, I am interested in powerlifting and football.',
     },
     educationSection: {
       header: 'Education',
       lifeEvents: {
         currentWork: {
-          time: '12.2019 - currently',
+          time: '08.2021 - currently',
+          header: 'j-labs software specialists',
+          description:
+            'Front-End Developer. Working in a project based on technologies such as React, Redux, TypeScript, Jest, Enzyme.',
+        },
+        firstWork: {
+          time: '12.2019 - 07.2021',
           header: 'Pirios S.A.',
           description:
             'Front-End Developer. Project implementation based on the Angular framework. Working in a project based on technologies such as React, Redux, TypeScript.',

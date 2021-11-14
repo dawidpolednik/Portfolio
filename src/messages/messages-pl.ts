@@ -14,13 +14,13 @@ export const plMessages = {
       firstParagraph:
         'Nazywam się Dawid Polednik, jestem Front-End Developerem pochodzącym z małego miasteczka spod Raciborza. Od ponad roku zajmuję się tworzeniem stron internetowych.',
       secondParagraph:
-        ' Mam półtoraroczne praktyczne doświadczenie w programowaniu aplikacji internetowych/mobilnych przy użyciu HTML5, CSS3 oraz języka JavaScript z wykorzystaniem bibliotek React/React Native.',
+        ' Mam ponad dwuletnie praktyczne doświadczenie w programowaniu aplikacji internetowych przy użyciu HTML5, CSS3 oraz języka JavaScript z wykorzystaniem bibliotek React.',
       thirdParagraph:
         'Jestem osobą stawiającą na ciągły rozwój, dlatego nie zamykam się na inne technologie.',
       fourthParagraph:
         'Jestem absolwentem studiów II stopnia kierunku Informatyka na Wydziale Automatyki, Elektroniki i Informatyki Politechniki Śląskiej.',
       fifthParagraph:
-        'Obecnie pracuję na stanowisku Front-End Developera w firmie Pirios S.A. zlokalizowanej w Krakowie.',
+        'Obecnie pracuję na stanowisku Front-End Developera w firmie j-labs zlokalizowanej w Krakowie.',
       sixthParagraph:
         'Poza zamiłowaniem do programowania webowego interesuję się trójbojem siłowym oraz piłką nożną.',
     },
@@ -28,7 +28,13 @@ export const plMessages = {
       header: 'Edukacja',
       lifeEvents: {
         currentWork: {
-          time: '12.2019 - obecnie',
+          time: '08.2021 - obecnie',
+          header: 'j-labs software specialists',
+          description:
+            'Praca w projekcie opartym o technologie takie jak: React, Redux, TypeScript, Jest, Enzyme.',
+        },
+        firstWork: {
+          time: '12.2019 - 07.2021',
           header: 'Pirios S.A.',
           description:
             'Front-End Developer. Realizacja projektu w oparciu o framework Angular. Praca w projekcie opartym o technologie takie jak: React, Redux, TypeScript.',
