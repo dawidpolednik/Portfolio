@@ -1,9 +1,9 @@
-import React, { FC, useMemo, useState } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
-import { useTranslation } from 'react-i18next';
-import { technologiesLoader } from '../../mocks/fixtures';
-import { DoubleAngle } from '../DoubleAngle/DoubleAngle';
-import styles from './Technologies.module.scss';
+import React, { FC, useMemo, useState } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
+import { useTranslation } from "react-i18next";
+import { technologiesLoader } from "../../mocks/fixtures";
+import { DoubleAngle } from "../DoubleAngle/DoubleAngle";
+import styles from "./Technologies.module.scss";
 
 export const Technologies: FC = () => {
   const [images] = useState(technologiesLoader());
@@ -22,7 +22,7 @@ export const Technologies: FC = () => {
         >
           <div className={styles.imgSection}>
             <div className={styles.imgContainer}>
-              <img className={styles.img} src={image} alt={description}></img>
+              <img className={styles.img} src={image} alt={description} />
             </div>
             <p className={styles.imgHeader}>{title}</p>
           </div>
@@ -35,7 +35,7 @@ export const Technologies: FC = () => {
     <section className={styles.container} id="technologies">
       <div className={styles.technologiesHeader}>
         <h2 className={styles.technologiesTitle}>
-          {t('technologiesSection.header')}
+          {t("technologiesSection.header")}
         </h2>
       </div>
       <div className={styles.technologiesBackground}>
